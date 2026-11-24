@@ -648,7 +648,123 @@ body{font-weight:500}
  .presentation-main .page[data-index="6"] .knowledge-quote{padding:6px 8px}
  .presentation-main .page[data-index="6"] .knowledge-diagram{min-height:75px}
 }
-  </style>
+  
+/* CH06 - evidence ladder / 2026 independently sourced overlay */
+.ch06-main{grid-template-columns:minmax(0,1.35fr) minmax(360px,.92fr);gap:13px;align-items:stretch}
+.ch06-main>.card{min-height:0}
+.ch06-visual{display:flex;flex-direction:column;gap:13px}
+.ch06-panel-heading{display:flex;justify-content:space-between;align-items:center;gap:7px;flex-wrap:wrap;min-width:0}
+.ch06-panel-heading>strong{font-size:clamp(18px,1.45vw,25px);line-height:1.2}
+.ch06-guide{font-size:clamp(11px,.77vw,15px);color:var(--text-muted)}
+.ch06-switch{display:flex;align-items:center;gap:6px;padding:4px;background:#f2f4f5;border:1px solid #e0e4e5;border-radius:10px;width:max-content;max-width:100%}
+.ch06-switch-btn{border:0;background:none;color:var(--text-muted);font-weight:800;border-radius:7px;font-size:clamp(12px,.98vw,17px);padding:8px 13px;white-space:nowrap;transition:background .2s,color .2s,box-shadow .2s}
+.ch06-switch-btn.chosen{background:#fff;color:var(--primary);box-shadow:0 2px 8px #28343d18}
+.ch06-chain{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;min-height:0;flex:1}
+.ch06-level{position:relative;text-align:left;display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:182px;padding:14px 12px 12px;border-radius:13px;border:1.5px solid #dbe2e5;background:#fff;box-shadow:0 3px 10px #273d4810;transition:transform .2s,border-color .2s,background .2s}
+.ch06-level:focus-visible{outline:3px solid #6f9ec0;outline-offset:2px}
+.ch06-level.selected{border:2px solid var(--primary);background:var(--primary-soft);box-shadow:0 6px 20px #7d212a1c;transform:translateY(-3px)}
+.ch06-level:hover{transform:translateY(-2px)}
+.ch06-level-number{font-size:clamp(12px,.98vw,18px);letter-spacing:.05em;color:var(--text-muted);width:100%;display:flex;justify-content:space-between;align-items:center}
+.ch06-level-status{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c0c6c8}
+.ch06-level-status.verified{background:#18766c}.ch06-level-status.pending{background:#d66a3b}.ch06-level-status.historic{background:#7d212a}
+.ch06-level-title{font-size:clamp(15px,1.23vw,22px);font-weight:850;margin-top:12px;line-height:1.25}
+.ch06-level-value{color:var(--primary);font-size:clamp(17px,1.55vw,28px);font-weight:900;line-height:1.23;margin-top:auto;padding-top:9px;overflow-wrap:anywhere}
+.ch06-level-hint{color:var(--text-muted);font-size:clamp(10px,.78vw,14px);line-height:1.32;margin-top:6px}
+.ch06-flow-track{height:9px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;align-items:center;padding:0 10px;opacity:.82}
+.ch06-flow-track span{height:3px;display:block;background:repeating-linear-gradient(90deg,#cfa0a4 0 10px,transparent 10px 18px);background-size:32px 3px;border-radius:3px;animation:ch06-move 1.8s linear infinite}
+@keyframes ch06-move{to{background-position:32px 0}}
+.ch06-statement{padding:15px 17px;background:#f8eaeb;border:1px solid #eccdcf;border-radius:12px;display:flex;flex-direction:column;gap:6px}
+.ch06-statement strong{font-size:clamp(19px,1.45vw,27px);color:var(--primary);line-height:1.25}
+.ch06-statement span{font-size:clamp(14px,1.07vw,21px);line-height:1.3;color:#73464b;font-weight:700}
+.ch06-context{padding:11px 13px;background:#f2f6fa;border:1px solid #e0e8ec;border-left:4px solid var(--accent-blue);border-radius:9px;display:flex;gap:10px;align-items:baseline;line-height:1.4}
+.ch06-context.historic{background:#faf4f1;border-color:#f0e1d8;border-left-color:#cb7049}
+.ch06-context b{font-size:clamp(12px,.93vw,17px);flex-shrink:0;color:#305f9b}
+.ch06-context.historic b{color:#9c5139}
+.ch06-context span{font-size:clamp(12px,.91vw,16px);color:#475e6d}
+.ch06-detail-card{display:flex;flex-direction:column;gap:10px;min-width:0}
+.ch06-step-label{font-size:clamp(12px,.93vw,16px);letter-spacing:.035em;color:var(--text-muted)}
+.ch06-detail-card h2{font-size:clamp(19px,1.44vw,26px);line-height:1.25;margin:0;letter-spacing:-.02em}
+.ch06-detail-card .tag{font-size:clamp(10px,.83vw,13px);padding:3px 7px}
+.ch06-headline{font-size:clamp(39px,3.7vw,65px);font-weight:900;color:var(--primary);letter-spacing:-.055em;line-height:1.03}
+.ch06-headline.current{color:var(--secondary)}
+.ch06-numeral-note{font-size:clamp(13px,1vw,18px);font-weight:800;line-height:1.3;color:var(--text-muted);margin:-3px 0 0}
+.ch06-claim{border-radius:11px;padding:12px 14px;background:#f5f8f9;border:1px solid #e0e8eb;display:flex;flex-direction:column;gap:5px}
+.ch06-claim b{font-size:clamp(12px,.91vw,16px);color:var(--primary)}
+.ch06-claim p{font-size:clamp(14px,1.02vw,19px);line-height:1.48;margin:0}
+.ch06-limit{display:flex;gap:8px;flex-direction:column;padding:11px 13px;background:#fff7f1;border-left:4px solid var(--accent-orange);border-radius:0 8px 8px 0}
+.ch06-limit b,.ch06-agent b{font-size:clamp(12px,.9vw,16px);color:#ad592c}
+.ch06-limit span,.ch06-agent span{font-size:clamp(13px,.94vw,17px);line-height:1.43}
+.ch06-agent{display:flex;gap:7px;flex-direction:column;padding:10px 12px;background:var(--secondary-soft);border-left:4px solid var(--secondary);border-radius:0 8px 8px 0}
+.ch06-agent b{color:var(--secondary)}
+.ch06-sourceline{font-size:clamp(11px,.81vw,14px);line-height:1.35;color:var(--text-muted);margin-top:auto;padding-top:2px;display:flex;gap:7px;align-items:baseline;flex-wrap:wrap}
+.ch06-sourceline a{color:#255b88;text-underline-offset:3px;font-weight:700}
+.ch06-print-only{display:none}
+@media (min-width:901px) and (max-height:810px){
+ .ch06-visual{gap:7px}
+ .ch06-chain{gap:7px}
+ .ch06-level{min-height:150px;padding:9px 9px 8px}
+ .ch06-level-title{margin-top:7px}
+ .ch06-level-value{padding-top:7px}
+ .ch06-statement{padding:10px 12px;gap:3px}
+ .ch06-context{padding:8px 10px;gap:6px}
+ .ch06-detail-card{gap:6px}
+ .ch06-detail-card .ch06-headline{font-size:clamp(36px,3.4vw,51px)}
+ .ch06-claim{padding:8px 10px}
+ .ch06-claim p{line-height:1.37}
+ .ch06-limit,.ch06-agent{padding:7px 10px;gap:4px}
+ .ch06-sourceline{font-size:11px}
+}
+@media (max-width:900px){
+ .ch06-main{grid-template-columns:1fr}
+ .ch06-chain{min-height:190px}
+ .ch06-detail-card{min-height:0}
+}
+@media (max-width:620px){
+ .ch06-chain{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .ch06-level{min-height:145px}
+ .ch06-level-value{font-size:23px}
+ .ch06-context{flex-direction:column;gap:4px}
+ .ch06-switch-btn{white-space:normal;font-size:13px;padding:9px}
+ .ch06-flow-track{display:none}
+}
+@media (prefers-reduced-motion:reduce){.ch06-flow-track span{animation:none}.ch06-level{transition:none}}
+@media print{
+ #print-root .page[data-index="5"] .ch06-main{grid-template-columns:minmax(0,1.28fr) minmax(0,.94fr)!important;gap:14px!important}
+ #print-root .page[data-index="5"] .ch06-visual{gap:8px!important}
+ #print-root .page[data-index="5"] .ch06-detail-card{gap:7px!important}
+ #print-root .page[data-index="5"] .ch06-level{min-height:134px!important;padding:9px!important;transform:none!important}
+ #print-root .page[data-index="5"] .ch06-level-value{font-size:20px!important}
+ #print-root .page[data-index="5"] .ch06-level-title{font-size:17px!important;margin-top:5px!important}
+ #print-root .page[data-index="5"] .ch06-headline{font-size:43px!important}
+ #print-root .page[data-index="5"] .ch06-claim{padding:10px 12px!important}
+ #print-root .page[data-index="5"] .ch06-claim p{font-size:16px!important;line-height:1.35!important}
+ #print-root .page[data-index="5"] .ch06-limit,#print-root .page[data-index="5"] .ch06-agent{padding:8px 10px!important;gap:4px!important}
+ #print-root .page[data-index="5"] .ch06-limit span,#print-root .page[data-index="5"] .ch06-agent span{font-size:15px!important;line-height:1.32!important}
+ #print-root .page[data-index="5"] .ch06-switch{display:none!important}
+ #print-root .page[data-index="5"] .ch06-context{display:none!important}
+ #print-root .page[data-index="5"] .ch06-flow-track{display:none!important}
+ #print-root .page[data-index="5"] .ch06-print-only{display:block!important;border:1px solid #bcd6cc;background:#eff8f4;padding:8px 12px;border-radius:10px}
+ #print-root .page[data-index="5"] .ch06-print-only strong{font-size:15px;color:#18766c}
+ #print-root .page[data-index="5"] .ch06-print-only p{font-size:14px;line-height:1.25;margin:4px 0 0}
+ #print-root .page[data-index="5"] .ch06-statement{padding:9px 11px!important}
+ #print-root .page[data-index="5"] .ch06-statement strong{font-size:20px!important}
+ #print-root .page[data-index="5"] .ch06-statement span{font-size:14px!important}
+ #print-root .page[data-index="5"] .footnote{font-size:10px!important;line-height:1.35!important}
+}
+
+  
+/* Content-led SVG illustrations occupy the once-empty center of every evidence card. */
+.ch06-level-icon{display:flex;justify-content:center;align-items:center;width:100%;flex:1;min-height:30px;max-height:105px;padding:7px 0;pointer-events:none;color:#8f5961}
+.ch06-level-icon svg{display:block;width:clamp(50px,5.7vw,90px);height:clamp(50px,5.7vw,90px);max-width:100%;opacity:.82}
+.ch06-level.modern .ch06-level-icon{color:#477e80}
+.ch06-level.selected .ch06-level-icon{color:var(--primary)}
+@media (min-width:901px) and (max-height:810px){
+ .ch06-level-icon{min-height:64px;padding:4px 0;max-height:113px}
+ .ch06-level-icon svg{width:clamp(72px,7.2vw,105px);height:clamp(72px,7.2vw,105px)}
+}
+@media (max-width:620px){.ch06-level-icon{min-height:36px;max-height:65px}.ch06-level-icon svg{width:53px;height:53px}}
+@media print{#print-root .page[data-index="5"] .ch06-level-icon{max-height:100px!important;min-height:65px!important;padding:2px!important}#print-root .page[data-index="5"] .ch06-level-icon svg{width:78px!important;height:78px!important}}
+</style>
 </head>
 <body>
   <aside id="sidebar" class="sidebar" aria-label="章節導覽">
@@ -704,7 +820,7 @@ body{font-weight:500}
     {code:'S3',name:'從教科書，走到真正的文獻回顧',short:'閱讀能力的躍升',subtitle:'搜尋只是起點，批判與整合才是研究者的工作',time:'1:05',kind:'原書主張＋講者延伸'},
     {code:'S4',name:'站在巨人的肩膀上，而非從零開始',short:'跨域學習與再利用',subtitle:'標準模組、專業網絡與情境判斷',time:'1:15',kind:'原書案例'},
     {code:'S5',name:'網路資訊，需要通過三道關卡',short:'三道資訊關卡',subtitle:'AI Agent 可以加速搜尋，也可能放大錯誤前提',time:'1:20',kind:'原書主張＋講者延伸'},
-    {code:'S6',name:'石墨烯電池：從材料數據到產業結論',short:'四層證據查核',subtitle:'數字正確，不代表跨層推論成立',time:'1:45',kind:'原書歷史案例'},
+    {code:'S6',name:'石墨烯電池：從材料數據到產業結論',short:'歷史 × 2026 查核',subtitle:'材料潛力、量產電池、整車效率與能源轉型：四層不能跳步',time:'1:45',kind:'原書歷史案例＋2026 查核'},
     {code:'S7',name:'資訊不等於知識：三項核心判準',short:'資訊 vs. 知識',subtitle:'可驗證、能組織、可演繹，才有能力真正活用',time:'1:10',kind:'原書表 6'},
     {code:'S8',name:'嚴謹度的價值：跨越 Sim-to-Real Gap',short:'模擬到真實的落差',subtitle:'結論成立的條件，比漂亮的結果更重要',time:'1:35',kind:'原書定義＋跨域延伸'},
     {code:'S9',name:'創意與嚴謹，為何缺一不可？',short:'創意 × 品質保證',subtitle:'一個提出可能性，一個讓成果能被信任',time:'0:55',kind:'原書對照'},
@@ -781,6 +897,24 @@ body{font-weight:500}
       {title:'第 3 層｜整車效率',big:'約 14–30%',label:'原書轉述：汽油引擎有效推車能量比例',detail:'原書指出汽油引擎約 70% 能量變成熱，僅約 14–30% 推動車輛；電池／電動動力系統效率可高達汽油引擎的 4 倍。續航「有機會接近」，仍非必然。',key:'需要檢查：整車能耗、效率、重量與使用條件。'},
       {title:'第 4 層｜能源供應鏈',big:'3–4 倍',label:'原書援引：太陽能板效率發展的展望',detail:'原書以 MIT 開發中太陽能板的效率與製程成本展望，推論家用車電動化的可能性。屬歷史情境中的推演，非已驗證的當前產業成果。',key:'需要檢查：發電來源、能源成本與基礎設施。'}
     ],
+    battery2026:[
+      {title:'石墨烯材料',big:'尚未量產',short:'石墨烯電極仍處研究階段',date:'2026／10',status:'研發中',name:'Nature Nanotechnology',url:'https://www.nature.com/articles/s41565-026-02279-x',
+       claim:'2026 年 10 月《Nature Nanotechnology》的技術專題指出：石墨烯電池電極尚無大規模量產。研究潛力不等於商用電芯已達標。',
+       boundary:'材料或實驗室測試，不能直接代表量產電芯、完整電池包的能量密度與壽命。',
+       agent:'要求區分電極材料、實驗室電芯、商用品與量產數量；查核循環壽命、安全與成本。'},
+      {title:'量產電池',big:'LFP ＞55%',short:'2025 全球 EV 電池部署占比',date:'2026／05',status:'市場實績',name:'IEA 電動車電池',url:'https://www.iea.org/reports/global-ev-outlook-2026/electric-vehicle-batteries',
+       claim:'IEA《Global EV Outlook 2026》：2025 年全球電動車電池部署，磷酸鐵鋰（LFP）已占超過 55%。這與「石墨烯已取代鋰電」不同。',
+       boundary:'必須區分電池化學組成、電芯／電池包、重量或體積能量密度，以及價格與壽命。',
+       agent:'要求列出化學體系、來源年度、統計分母、電芯或電池包層級，禁止混合比較。'},
+      {title:'車輛效率',big:'效率優勢',short:'電驅損失較低，需注意計算邊界',date:'持續更新',status:'工程證據',name:'美國 fueleconomy.gov',url:'https://fueleconomy.gov/feg/atv-ev.shtml',
+       claim:'美國能源效率官方資料顯示，電動車電驅系統的損耗約 15–20%；燃油引擎損耗約 64–75%。數字來自不同子系統，不宜直接當作同一測量邊界的完整對照。',
+       boundary:'電芯能量密度 ≠ 整車續航；還需車重、行駛工況、充電損耗、空調與動力回收。',
+       agent:'要求標示能量輸入與量測位置；用相同工況比較實際 kWh／100 km 或燃料消耗。'},
+      {title:'能源與普及',big:'25% 新車',short:'2025 全球新車含 BEV／PHEV',date:'2026／05',status:'市場實績',name:'IEA 電動車展望',url:'https://www.iea.org/reports/global-ev-outlook-2026/executive-summary',
+       claim:'IEA：2025 年電動車銷量超過 2,000 萬輛，占新車 25%（含 BEV／PHEV）；《Renewables 2026》預測太陽光電將占 2026–31 年再生能源新增容量約四分之三。兩者均不代表石墨烯電池／太陽能板預測已實現。',
+       boundary:'還需充電網、電網結構、再生能源、生命週期及各地政策；太陽光電擴張不等於當年石墨烯太陽能預測實現。',
+       agent:'要求拆解技術、基建、政策的貢獻；檢查預測／實績，並附 2026 年能源系統來源。'},
+    ],
     criteria:[
       ['正確性','不確知','經嚴謹驗證','有可回溯證據與可重驗方法，而不是只有看起來合理的敘述。'],
       ['組織性','散亂、無組織','系統性組織','理解概念與概念之間的關係，讓他人可沿著邏輯檢查。'],
@@ -793,7 +927,7 @@ body{font-weight:500}
       {title:'5G/6G・LEO 安全',lab:'準靜態網路與弱攻擊者模型',real:'衛星交遞、可見視窗、多普勒、攻擊者適應',check:'動態拓樸／交遞情境與更強基準線測試。'}
     ]
   };
-  const state={page:0,layout:'single',presenting:false,ability:0,reading:2,readingMode:'roles',readingPlaying:false,reuse:'fpga',reuseStep:0,gate:0,risk:false,battery:0,criterion:0,knowledgeCase:'biomedical',field:0,balance:50,conclusion:'applied',discussion:{delegate:'',hold:'',proof:''},seconds:0,endAt:0,timerRunning:false};
+  const state={page:0,layout:'single',presenting:false,ability:0,reading:2,readingMode:'roles',readingPlaying:false,reuse:'fpga',reuseStep:0,gate:0,risk:false,battery:0,batteryEra:'current',criterion:0,knowledgeCase:'biomedical',field:0,balance:50,conclusion:'applied',discussion:{delegate:'',hold:'',proof:''},seconds:0,endAt:0,timerRunning:false};
   const $=(id)=>document.getElementById(id);
   const esc=(s)=>String(s??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const label=(text,type='book')=>`<span class="tag ${type}">${text}</span>`;
@@ -881,11 +1015,64 @@ body{font-weight:500}
     <div class="gate-mini-tabs" role="group" aria-label="選擇查核關卡">${info.gates.map((v,i)=>`<button type="button" class="mini-tab ${g===i?'selected':''}" data-action="gate" data-value="${i}" aria-pressed="${g===i}">0${i+1} ${['來源','脈絡','假設'][i]}</button>`).join('')}</div>
   </div></div>`, '原書三關卡／同溫層；Agent 風險示例為講者延伸。<a href="https://genai.owasp.org/top-10-for-agentic-applications-2026/" target="_blank" rel="noopener noreferrer">OWASP Agentic Top 10</a>');}
 
-  function s6(){const x=info.battery[state.battery];const arr=['電池材料','能源比較','整車效率','供電來源'];return page(5,`<div class="main-grid"><div class="card visual-flex"><div class="card-title">同一個結論，需要四層不同證據 <span class="tag caution">原書歷史情境</span></div><div class="step-row">${arr.map((n,i)=>`<button class="step-box ${i===state.battery?'active':''}" type="button" data-action="battery" data-value="${i}"><span class="step-count">LEVEL 0${i+1}</span><strong>${n}</strong></button>`).join('')}</div><svg class="diagram" viewBox="0 0 720 295" role="img" aria-label="從石墨烯電池特性、能源密度比較、整車效率到電力供應的四層推論圖">${svgArrow('ar6','#a9b9be')}<rect x="12" y="45" width="147" height="150" rx="14" fill="${state.battery===0?'#f9eee9':'#fff'}" stroke="${state.battery===0?'#7d212a':'#dce3e7'}" stroke-width="2"/><rect x="37" y="87" width="93" height="49" rx="6" fill="none" stroke="#7d212a" stroke-width="4"/><path d="M132 101h9v22h-9" fill="#7d212a"/><path d="M49 110h62" stroke="#d66a3b" stroke-width="4" class="flowline"/><text x="86" y="170" text-anchor="middle" font-weight="800" fill="#7d212a" font-size="14">材料性能</text>
-<rect x="194" y="45" width="147" height="150" rx="14" fill="${state.battery===1?'#f9eee9':'#fff'}" stroke="${state.battery===1?'#7d212a':'#dce3e7'}" stroke-width="2"/><path d="M214 124h106M235 104l18-21h33l20 21M232 125a12 12 0 1 0 24 0M284 125a12 12 0 1 0 24 0" fill="none" stroke="#305f9b" stroke-width="4"/><text x="267" y="170" text-anchor="middle" font-weight="800" fill="#305f9b" font-size="14">系統比較</text>
-<rect x="378" y="45" width="147" height="150" rx="14" fill="${state.battery===2?'#f9eee9':'#fff'}" stroke="${state.battery===2?'#7d212a':'#dce3e7'}" stroke-width="2"/><circle cx="451" cy="110" r="32" stroke="#18766c" fill="none" stroke-width="4"/><path d="M451 110l20-16M430 130l-6 12M471 130l7 12" stroke="#18766c" stroke-width="4"/><text x="451" y="170" text-anchor="middle" font-weight="800" fill="#18766c" font-size="14">動力效率</text>
-<rect x="563" y="45" width="145" height="150" rx="14" fill="${state.battery===3?'#f9eee9':'#fff'}" stroke="${state.battery===3?'#7d212a':'#dce3e7'}" stroke-width="2"/><circle cx="635" cy="98" r="20" fill="#ffedd9" stroke="#d66a3b" stroke-width="3"/><path d="M619 130l-12 15h56l-12-15M617 137h36" stroke="#d66a3b" stroke-width="3"/><text x="636" y="170" text-anchor="middle" font-weight="800" fill="#d66a3b" font-size="14">能源來源</text>
-${[159,341,525].map(v=>`<path d="M${v} 120 h34" stroke="#a9b9be" stroke-width="3" class="flowline" marker-end="url(#ar6)"/>`).join('')}<text x="365" y="238" text-anchor="middle" font-size="15" font-weight="800" fill="#1a2b36">材料數字 ≠ 整車性能 ≠ 產業取代</text><text x="365" y="267" text-anchor="middle" font-size="12" fill="#64747f">每跨越一層，都需要新的基準、邊界條件與證據</text></svg><div class="action-row"><button class="btn small" type="button" data-action="battery-prev" ${state.battery===0?'disabled':''}>← 上一層</button><button class="btn small teal" type="button" data-action="battery-next" ${state.battery===3?'disabled':''}>下一層 →</button></div></div><div class="card column-stack"><div class="card-kicker">${x.title}</div><div class="large-numeral reveal">${x.big}</div><div class="number-caption">${x.label}</div><div class="detail reveal"><strong style="font-size:14px">該層推論與限制</strong><p>${x.detail}</p></div><div class="inline-foot"><strong>這一層不能跳過的問題</strong><br>${x.key}</div><div style="color:#a05b35;font-size:10.5px;line-height:1.7">所有數字均依提供的第 17 章導讀稿轉述；屬書中引用與展望，未於本頁重新驗證原論文或 2026 年現況。</div></div></div>`,'歷史案例與數值取自使用者提供的第 17 章 v4 導讀稿；不是本站新增測量，也不代表 2026 年的產業現況。');}
+  function s6(){
+    const isNow=state.batteryEra==='current';
+    const i=state.battery, b=info.battery[i], n=info.battery2026[i];
+    const levels=['材料性能','電池系統','整車效率','能源與普及'];
+    const bookShort=['6–10×','53×／29×','14–30%','3–4×'];
+    const nowShort=['未量產','LFP ＞55%','效率優勢','25% 新車'];
+    const nowLabel=['研究仍在推進','2025 年市場實績','官方工程說明','2025 年市場實績'];
+    const pictures=[
+      `<svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M38 10l16 9v18l-16 9-16-9V19zM66 22l15 9v18l-15 9-15-9V31zM41 55l16 9v18l-16 9-16-9V64z"/><circle cx="38" cy="28" r="3.6" fill="currentColor"/><circle cx="66" cy="40" r="3.6" fill="currentColor"/><circle cx="41" cy="73" r="3.6" fill="currentColor"/><path d="M38 47v6M54 40l-8 13M62 58l-12 6"/></svg>`,
+      `<svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="26" width="76" height="47" rx="7"/><path d="M87 42h7v15h-7M20 33v33M39 33v33M58 33v33M77 33v33"/><path d="M24 17h18m-9-8v18M58 17h21"/></svg>`,
+      `<svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 58h77v15H12zM23 57l9-21h34l12 21M31 36l6 21M66 36l5 21"/><circle cx="28" cy="75" r="9"/><circle cx="73" cy="75" r="9"/><path d="M46 27l-7 12h9l-6 14 19-23h-9l4-10"/></svg>`,
+      `<svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="73" cy="24" r="13"/><path d="M73 4v5m0 30v5M52 24h6m30 0h7M59 11l4 4m21 19l4 4M88 11l-5 5M58 38l5-5"/><path d="M11 50h68l10 30H21L11 50zM27 50l8 30M45 50l4 30M64 50l4 30M16 65h67M28 80v10M76 80v10M22 90h60"/></svg>`
+    ];
+    const statusClass=['pending','verified','verified','verified'];
+    const sources=[
+      ['Nature Nanotechnology · 2026/10','https://www.nature.com/articles/s41565-026-02279-x'],
+      ['IEA Global EV Outlook 2026','https://www.iea.org/reports/global-ev-outlook-2026/electric-vehicle-batteries'],
+      ['U.S. fueleconomy.gov','https://fueleconomy.gov/feg/atv-ev.shtml'],
+      ['IEA Global EV Outlook 2026','https://www.iea.org/reports/global-ev-outlook-2026/executive-summary']
+    ];
+    const bookNums=['原書轉述：材料的可能表現','原書轉述：汽油與鋰電池比較','原書轉述：燃油能量利用','原書轉述：太陽能技術展望'];
+    const tagNow='<span class="tag extend">2026 查核・講者補充</span>';
+    const tagBook='<span class="tag book">原書歷史論述・未逐筆查核原始文獻</span>';
+    const left=`<div class="card ch06-visual" aria-label="四層研究證據鏈">
+      <div class="ch06-panel-heading"><strong>四層證據鏈</strong><span class="ch06-guide">點選層級查看證據與推論邊界</span></div>
+      <div class="ch06-switch" role="group" aria-label="切換歷史論述和2026年查核">
+        <button type="button" class="ch06-switch-btn ${!isNow?'chosen':''}" data-action="battery-era" data-value="book" aria-pressed="${!isNow}">原書歷史論述</button>
+        <button type="button" class="ch06-switch-btn ${isNow?'chosen':''}" data-action="battery-era" data-value="current" aria-pressed="${isNow}">2026 年現況</button>
+      </div>
+      <div class="ch06-chain" role="group" aria-label="四個證據層級">
+        ${levels.map((name,j)=>`<button type="button" class="ch06-level ${j===i?'selected':''} ${isNow?'modern':'historic'}" data-action="battery" data-value="${j}" aria-pressed="${j===i}">
+          <span class="ch06-level-number mono">0${j+1}<span class="ch06-level-status ${isNow?statusClass[j]:'historic'}"></span></span>
+          <span class="ch06-level-title">${name}</span>
+          <span class="ch06-level-icon">${pictures[j]}</span>
+          <span class="ch06-level-value">${isNow?nowShort[j]:bookShort[j]}</span>
+          <span class="ch06-level-hint">${isNow?nowLabel[j]:'原書提及／推估'}</span>
+        </button>`).join('')}
+      </div>
+      <div class="ch06-flow-track" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="ch06-statement"><strong>一個推論不能跨越四層。</strong><span>材料突破 ≠ 電池量產 ≠ 整車續航 ≠ 能源轉型</span></div>
+      <div class="ch06-context ${isNow?'current':'historic'}">
+        ${isNow?'<b>2026 現況｜截至 2026-11-24</b><span>電動化確實擴張，但不是「石墨烯電池已量產」的證據。</span>':'<b>原書歷史論證</b><span>以下倍數與效率數據取自 v4 導讀稿的原書轉述，非本站重新測量。</span>'}
+      </div>
+      <div class="ch06-print-only" aria-label="歷史論述與2026年四層查核摘要"><strong>原書歷史推論 vs. 2026 年查核</strong><p class="ch06-print-book">原書轉述：① 6–10 倍 ② 53×／29× ③ 14–30% ④ 3–4 倍（均非今日量產數據）</p><p>2026 查核：① 石墨烯電極尚無大規模量產 ② LFP 在 2025 年 EV 電池部署占比逾 55% ③ 電驅效率具優勢 ④ 2025 年 EV 占新車 25%（含 PHEV）</p></div>
+    </div>`;
+    const right=`<div class="card ch06-detail-card" aria-live="polite">
+      <div class="ch06-panel-heading"><span class="mono ch06-step-label">LEVEL 0${i+1} / 04</span>${isNow?tagNow:tagBook}</div>
+      <h2>${levels[i]}：${isNow?n.title:b.title.split('｜').slice(1).join('｜')}</h2>
+      <div class="ch06-headline ${isNow?'current':''}">${isNow?n.big:b.big}</div>
+      <p class="ch06-numeral-note">${isNow?n.short:b.label}</p>
+      <div class="ch06-claim"><b>${isNow?'【2026 已查核資料】':'【原書引述／歷史展望】'}</b><p>${isNow?n.claim:b.detail}</p></div>
+      <div class="ch06-limit"><b>${isNow?'不可直接推論':'推論關卡'}</b><span>${isNow?n.boundary:b.key}</span></div>
+      <div class="ch06-agent"><b>AI Agent 查核指令</b><span>${isNow?n.agent:'區分原始引用、推論前提及有效範圍；請 Agent 列出可核驗的資料來源，研究者逐筆確認。'}</span></div>
+      <div class="ch06-sourceline">${isNow?`<span class="ch06-origin">資料：${n.date} ／ ${n.status}</span> <a href="${n.url}" target="_blank" rel="noopener noreferrer">核對來源：${n.name}</a>`:'<span class="ch06-origin">來源：使用者提供的第 17 章 v4 導讀稿（原書案例）</span>'}</div>
+    </div>`;
+    const foot='原書數字為使用者 v4 講稿轉述，非本站獨立驗證。2026 查核：<a href="https://www.nature.com/articles/s41565-026-02279-x" target="_blank" rel="noopener noreferrer">Nature Nanotechnology（2026/10）</a>；<a href="https://www.iea.org/reports/global-ev-outlook-2026" target="_blank" rel="noopener noreferrer">IEA Global EV Outlook（2026/05）</a>；<a href="https://fueleconomy.gov/feg/atv-ev.shtml" target="_blank" rel="noopener noreferrer">美國能源效率資料</a>；<a href="https://www.iea.org/reports/renewables-2026/executive-summary" target="_blank" rel="noopener noreferrer">IEA Renewables 2026</a>。2025 為實績、2026 不等於已量產石墨烯電池。';
+    return page(5,`<div class="main-grid ch06-main">${left}${right}</div>`,foot);
+  }
   function s7(){const c=info.criteria[state.criterion],agent=info.knowledgeAgent[state.criterion];const examples=info.knowledgeCases[state.knowledgeCase];return page(6,`<div class="main-grid">
     <div class="card visual-flex knowledge-stage-left">
       <div class="card-title">表 6｜資訊與知識的對照 <span class="tag book">原書表 6</span></div>
@@ -946,7 +1133,7 @@ ${[159,341,525].map(v=>`<path d="M${v} 120 h34" stroke="#a9b9be" stroke-width="3
     case 'ability':state.ability=Number(val);patch(1);break;
     case 'reading':state.reading=Number(val);state.readingMode='roles';patch(2);break;case 'reading-mode':state.readingMode=val==='guardrails'?'guardrails':'roles';patch(2);break;case 'reading-play':toggleReading();break;
     case 'reuse':state.reuse=val;state.reuseStep=0;patch(3);break;case 'reuse-step':state.reuseStep=Math.min(2,Math.max(0,Number(val)));patch(3);break;case 'gate':state.gate=Number(val);patch(4);break;case 'risk':state.risk=val==='on';patch(4);break;
-    case 'battery':state.battery=Number(val);patch(5);break;case 'battery-prev':state.battery=Math.max(0,state.battery-1);patch(5);break;case 'battery-next':state.battery=Math.min(3,state.battery+1);patch(5);break;
+    case 'battery-era':state.batteryEra=val==='current'?'current':'book';patch(5);break;case 'battery':state.battery=Number(val);patch(5);break;case 'battery-prev':state.battery=Math.max(0,state.battery-1);patch(5);break;case 'battery-next':state.battery=Math.min(3,state.battery+1);patch(5);break;
     case 'criterion':state.criterion=Number(val);patch(6);break;case 'knowledge-case':state.knowledgeCase=['biomedical','fpga','leo'].includes(val)?val:'biomedical';patch(6);break;case 'field':state.field=Number(val);patch(7);break;case 'conclusion':state.conclusion=val;patch(9);break;
     case 'start-timer':startTimer(Number(val));break;case 'pause-timer':pauseTimer();break;case 'reset-timer':stopTimer();state.seconds=0;patch(10);break;case 'copy-answer':await copyAnswer();break;
   }});
