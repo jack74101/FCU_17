@@ -407,7 +407,79 @@ body{font-weight:500}
  .research-phase-strip .phase>span:last-child{grid-column:3;font-size:13px}
 }
 
-  </style>
+  
+/* High-fidelity print layout: each chapter fills one widescreen 16:9 sheet. */
+@media print {
+ @page { size: 13.333in 7.5in; margin: 0; }
+ html,body { margin:0!important;padding:0!important;width:100%!important;height:auto!important;overflow:visible!important;background:#fff!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important; }
+ #print-root { display:block!important; width:100%!important; margin:0!important;padding:0!important; }
+ #print-root .page {
+  box-sizing:border-box!important; width:100%!important; max-width:none!important;
+  height:7.5in!important; min-height:7.5in!important; max-height:7.5in!important;
+  margin:0!important; padding:0.24in 0.36in 0.18in!important;
+  display:flex!important; flex-direction:column!important; gap:11px!important;
+  break-inside:avoid!important; page-break-inside:avoid!important;
+  break-after:page!important; page-break-after:always!important;
+  animation:none!important; transform:none!important;
+ }
+ #print-root .page:last-child { break-after:auto!important; page-break-after:auto!important; }
+ #print-root .page-top {flex:0 0 auto!important;align-items:center!important;}
+ #print-root .page h1 {font-size:clamp(31px,2.75vw,37px)!important;line-height:1.20!important;}
+ #print-root .page-sub {font-size:19px!important;line-height:1.35!important;margin-top:4px!important;}
+ #print-root .main-grid,#print-root .discussion-grid {flex:1 1 0!important;min-height:0!important;gap:16px!important;}
+ #print-root .main-grid {grid-template-columns:minmax(0,1.55fr) minmax(320px,.83fr)!important;}
+ #print-root .card {padding:17px!important;min-height:0!important;}
+ #print-root .visual-flex {flex:1 1 0!important;min-height:0!important;gap:12px!important;}
+ #print-root .diagram {width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;flex:1 1 0!important;}
+ #print-root .card-title {font-size:20px!important;line-height:1.35!important; margin-bottom:10px!important;}
+ #print-root .detail {min-height:0!important;padding:17px!important;}
+ #print-root .detail strong {font-size:23px!important;}
+ #print-root .detail p {font-size:17px!important;line-height:1.5!important;}
+ #print-root .inline-foot {font-size:17px!important;line-height:1.45!important;padding:12px 15px!important;}
+ #print-root .feature-stat {padding:14px 15px!important;}
+ #print-root .feature-stat span {font-size:17px!important;line-height:1.45!important;}
+ #print-root .statement {font-size:19px!important;line-height:1.45!important;}
+ #print-root .compare-table {font-size:19px!important;}
+ #print-root .compare-table td {padding:19px 14px!important;font-size:19px!important;}
+ #print-root .compare-table th {padding:13px 14px!important;font-size:17px!important;}
+ #print-root .footnote {flex:0 0 auto!important;margin-top:auto!important;padding-top:7px!important;min-height:0!important;font-size:12px!important;line-height:1.35!important;}
+ #print-root .hero-card {min-height:0!important;}
+ #print-root .fcu-cover {flex:1 1 auto!important;min-height:0!important;}
+ #print-root .cover-bottom {flex:0 0 auto!important;}
+ #print-root .cover-tile {padding:13px!important;}
+ #print-root .cover-tile strong{font-size:18px!important;}
+ #print-root .cover-tile p{font-size:15px!important;}
+ #print-root .cover-brandline{gap:10px!important;padding-bottom:8px!important;}
+ #print-root .cover-seal{height:66px!important;width:66px!important;}
+ #print-root .fcu-cover .hero-question{font-size:42px!important;}
+ #print-root .cover-presenter{font-size:17px!important;}
+ #print-root .hero-panel-image{min-height:0!important;}
+ #print-root .page *,#print-root .page *::before,#print-root .page *::after {
+   animation:none!important; transition:none!important;
+ }
+ #print-root .page .reveal {opacity:1!important;visibility:visible!important;transform:none!important;}
+ /* Print static state instead of interactive-only hidden panels. */
+ #print-root .page svg {animation:none!important;}
+ #print-root .page .flowline {animation:none!important;}
+}
+
+/* Print-only finish: use one row of FCU cover tiles and ensure discussion fields never clip. */
+@media print {
+ #print-root .cover-bottom {grid-template-columns:repeat(3,minmax(0,1fr))!important; gap:12px!important;}
+ #print-root .question-tile {grid-column:auto!important;}
+ #print-root .fcu-cover .hero-copy {padding:9px!important;gap:6px!important;justify-content:center!important;}
+ #print-root .fcu-cover .hero-question {font-size:40px!important;line-height:1.16!important;}
+ #print-root .fcu-cover .hero-small {font-size:16px!important;line-height:1.35!important;}
+ #print-root .fcu-cover .hero-micro {font-size:15px!important;line-height:1.3!important;padding-top:5px!important;}
+ #print-root .page[data-index="10"] .discussion-grid {gap:13px!important;}
+ #print-root .page[data-index="10"] .card.column-stack {gap:9px!important;padding:12px 15px!important;}
+ #print-root .page[data-index="10"] .card.soft {padding:10px 12px!important;}
+ #print-root .page[data-index="10"] .form-group {gap:3px!important;margin-bottom:3px!important;}
+ #print-root .page[data-index="10"] .form-group input {height:34px!important;padding:5px 9px!important;}
+ #print-root .page[data-index="10"] .answer-preview {padding:9px 12px!important;font-size:14px!important;line-height:1.45!important;}
+ #print-root .page[data-index="10"] .timer-count {font-size:58px!important;line-height:1.2!important;}
+}
+</style>
 </head>
 <body>
   <aside id="sidebar" class="sidebar" aria-label="章節導覽">
