@@ -535,7 +535,120 @@ body{font-weight:500}
  #print-root .page[data-index="2"] .agent-bookline{padding-top:5px!important}
  #print-root .page[data-index="2"] .agent-risk-row{padding:7px 9px!important}
 }
-</style>
+
+/* CH04 / CH05 / CH07 case-specific AI Agent research extension. */
+.case-stage-left,.gate-stage-left,.knowledge-stage-left{gap:9px;min-width:0}
+.case-domain-switch .mini-tab{font-size:clamp(14px,1.05vw,17px);padding:8px 11px}
+.case-diagram,.gate-diagram{flex:1 1 0;min-height:130px;max-height:330px;object-fit:contain}
+.case-summary-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.case-track-item{border:1px solid var(--border-line);border-radius:10px;padding:9px 7px;background:#f8fafb;display:flex;align-items:center;gap:6px;color:var(--text-main);min-width:0;text-align:left;transition:.2s}
+.case-track-item span{font:800 13px/1 'JetBrains Mono',monospace;color:var(--primary)}
+.case-track-item b{font-size:clamp(12px,.9vw,16px);line-height:1.3}
+.case-track-item.is-current{border-color:#c99292;background:var(--primary-soft)}
+.case-bookline,.gate-bookline{font-size:clamp(15px,1.04vw,18px);line-height:1.45;background:#f8fafb;border:1px solid var(--border-line);border-radius:9px;padding:11px 13px}
+.case-agent-panel,.gate-agent-panel,.knowledge-agent-panel{min-width:0;min-height:0;display:flex;flex-direction:column;gap:9px}
+.case-panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex:0 0 auto}
+.case-panel-step{font-size:clamp(15px,1.04vw,19px);font-weight:850;color:var(--primary)}
+.case-agent-panel h2,.gate-agent-panel h2,.knowledge-agent-panel h2{font-size:clamp(24px,1.82vw,33px);line-height:1.2;margin:0;font-weight:850}
+.case-agent-grid{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:8px;flex:1 1 0;min-height:0}
+.case-agent-row{display:grid;grid-template-columns:minmax(82px,23%) minmax(0,1fr);align-items:center;gap:11px;padding:10px 12px;border:1px solid var(--border-line);border-left:4px solid #b2c6c3;border-radius:9px;background:#fff;min-height:0}
+.case-agent-row b{font-size:clamp(15px,1.04vw,19px);line-height:1.3;color:#1a2b36}
+.case-agent-row span{font-size:clamp(15px,1.01vw,18px);line-height:1.42}
+.case-agent-row.is-can{border-left-color:#305f9b;background:#f4f8fd}
+.case-agent-row.is-verify{border-left-color:#18766c;background:#f1f8f5}
+.case-agent-row.is-risk{border-left-color:#d66a3b;background:#fff7f2}
+.case-evidence{display:grid;grid-template-columns:minmax(82px,23%) minmax(0,1fr);gap:11px;align-items:center;border:1px solid #b6d8ce;background:#e8f4f0;border-radius:9px;padding:11px 12px}
+.case-evidence b{color:#18766c;font-size:clamp(15px,1vw,18px)}
+.case-evidence span{font-size:clamp(15px,1.01vw,18px);line-height:1.4}
+.case-human,.gate-failure{display:flex;gap:8px;align-items:flex-start;border-left:4px solid var(--primary);padding:10px 12px;background:var(--primary-soft);border-radius:0 8px 8px 0;font-size:clamp(14px,.96vw,17px);line-height:1.38}
+.case-human strong,.gate-failure b{min-width:100px;flex:none;color:var(--primary)}
+.gate-stage-left .outcome-panel{flex:0 0 auto;min-height:78px}
+.gate-agent-panel .gate-bookline{padding:9px 11px}
+.gate-failure{background:#f7f8f9;border-left-color:#bdc5c9}
+.gate-failure.emphasized{background:#fff2e9;border-left-color:#d66a3b}
+.gate-mini-tabs{display:flex;gap:5px;flex-wrap:wrap}
+.gate-mini-tabs .mini-tab{padding:6px 8px;font-size:clamp(13px,.94vw,15px)}
+.knowledge-stage-left{gap:11px}
+.knowledge-stage-left .compare-table{font-size:clamp(16px,1.1vw,20px)}
+.knowledge-stage-left .compare-table td{padding:clamp(14px,1.15vw,21px) 13px}
+.knowledge-stage-left .compare-table .mini-tab{font-size:clamp(14px,1vw,19px)}
+.knowledge-diagram{flex:1 1 0;min-height:95px;max-height:240px}
+.knowledge-quote{display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid #c4dcd7;background:#edf7f4;color:#1e6c61;font-weight:750;font-size:clamp(15px,1.03vw,19px);padding:10px 13px;border-radius:9px}
+.knowledge-criterion-explain{font-size:clamp(15px,1.08vw,19px);line-height:1.4;color:var(--text-muted);border-bottom:1px solid var(--border-line);padding-bottom:8px}
+.knowledge-case-block{border:1px solid #c4cfdf;background:#f2f6fc;border-radius:9px;padding:10px 12px}
+.knowledge-case-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.knowledge-case-head>b{font-size:clamp(15px,1.05vw,18px);color:#305f9b}
+.knowledge-case-tabs{display:flex;gap:5px}
+.knowledge-case-tabs .mini-tab{font-size:clamp(13px,.92vw,16px);padding:5px 8px}
+.knowledge-case-block p{font-size:clamp(15px,1.04vw,18px);line-height:1.4;margin:7px 0 0;color:#253949}
+@media (min-width:901px) and (max-height:810px){
+ .case-agent-panel,.gate-agent-panel,.knowledge-agent-panel{gap:6px}
+ .case-agent-row{padding:6px 9px;gap:8px}
+ .case-agent-row span{font-size:clamp(14px,1.04vw,17px);line-height:1.33}
+ .case-agent-row b,.case-evidence b{font-size:clamp(14px,1vw,17px)}
+ .case-evidence{padding:7px 9px;gap:8px}
+ .case-evidence span{font-size:clamp(14px,1.03vw,17px);line-height:1.33}
+ .case-human,.gate-failure{padding:7px 9px;font-size:clamp(13px,.94vw,16px);gap:7px}
+ .case-stage-left,.gate-stage-left,.knowledge-stage-left{gap:6px}
+ .case-bookline,.gate-bookline{padding:7px 9px;font-size:clamp(14px,.99vw,17px)}
+ .case-summary-track{gap:5px}
+ .case-track-item{padding:6px 5px}
+ .case-diagram,.gate-diagram{max-height:38vh}
+ .gate-stage-left .outcome-panel{padding:9px;min-height:65px}
+ .gate-stage-left .outcome-symbol{width:48px;height:48px;font-size:28px}
+ .gate-stage-left .outcome-content strong{font-size:17px}
+ .gate-stage-left .outcome-content span{font-size:15px;line-height:1.35}
+ .knowledge-criterion-explain{font-size:15px;padding-bottom:5px}
+ .knowledge-quote{padding:7px 9px;font-size:15px}
+ .knowledge-stage-left .compare-table td{padding:10px 9px}
+ .knowledge-case-block{padding:7px 9px}
+ .knowledge-case-block p{font-size:14px;line-height:1.35;margin:4px 0 0}
+ .knowledge-case-tabs .mini-tab{font-size:13px;padding:4px 7px}
+}
+@media (max-width:900px){
+ .case-agent-grid{grid-template-rows:auto}
+ .case-agent-panel,.gate-agent-panel,.knowledge-agent-panel{min-height:0}
+ .case-diagram,.gate-diagram,.knowledge-diagram{flex:none;max-height:360px}
+ .case-agent-row{grid-template-columns:minmax(90px,22%) minmax(0,1fr)}
+}
+@media (max-width:620px){
+ .case-agent-row,.case-evidence{grid-template-columns:1fr;gap:4px}
+ .case-human,.gate-failure{display:block}
+ .case-human strong,.gate-failure b{display:block;margin-bottom:5px}
+ .case-track-item{display:flex;flex-direction:column;gap:4px;text-align:center;justify-content:center}
+ .case-stage-left .case-diagram,.gate-stage-left .gate-diagram,.knowledge-stage-left .knowledge-diagram{width:100%;height:auto;min-height:0}
+ .case-agent-row span,.case-evidence span,.knowledge-case-block p{font-size:16px}
+ .knowledge-quote{font-size:16px;flex-wrap:wrap}
+}
+@media print{
+ #print-root .case-agent-panel,#print-root .gate-agent-panel,#print-root .knowledge-agent-panel{gap:8px!important}
+ #print-root .case-agent-row{padding:9px 11px!important;gap:9px!important}
+ #print-root .case-agent-row span{font-size:16px!important;line-height:1.37!important}
+ #print-root .case-agent-row b{font-size:16px!important}
+ #print-root .case-evidence{padding:9px 11px!important}
+ #print-root .case-evidence b,#print-root .case-evidence span{font-size:16px!important}
+ #print-root .case-human,#print-root .gate-failure{font-size:15px!important;padding:8px 11px!important}
+ #print-root .case-diagram,#print-root .gate-diagram{max-height:320px!important}
+ #print-root .knowledge-stage-left .compare-table td{font-size:18px!important;padding:12px 12px!important}
+ #print-root .knowledge-case-block p{font-size:16px!important}
+ #print-root .knowledge-quote{font-size:16px!important}
+}
+
+  
+/* On 720p projectors, keep CH07 fully visible at 100% zoom without shrinking body text. */
+@media (min-width:901px) and (max-height:740px){
+ .presentation-main .page[data-index="6"]{gap:5px}
+ .presentation-main .page[data-index="6"] .main-grid{gap:9px}
+ .presentation-main .page[data-index="6"] .card{padding:11px}
+ .presentation-main .page[data-index="6"] .compare-table td{padding:7px 8px}
+ .presentation-main .page[data-index="6"] .compare-table th{padding:8px 9px}
+ .presentation-main .page[data-index="6"] .case-agent-row{padding:5px 8px}
+ .presentation-main .page[data-index="6"] .case-evidence{padding:6px 8px}
+ .presentation-main .page[data-index="6"] .knowledge-case-block{padding:6px 8px}
+ .presentation-main .page[data-index="6"] .knowledge-quote{padding:6px 8px}
+ .presentation-main .page[data-index="6"] .knowledge-diagram{min-height:75px}
+}
+  </style>
 </head>
 <body>
   <aside id="sidebar" class="sidebar" aria-label="章節導覽">
@@ -630,6 +743,33 @@ body{font-weight:500}
       {can:'協助形成主題圖、文獻矩陣及引用草稿。',verify:'確保每個主張均有原文支撐，保留反例與來源定位。',risk:'警惕引用漂移、重複證據、無歸屬改寫與抄襲。',evidence:'「主張 → 證據 → 限制」可追溯矩陣。'},
       {can:'提出研究缺口假說、替代方案、實驗設計初稿。',verify:'親自界定新穎性、可行性、研究倫理與驗證指標。',risk:'「未檢索到」不等於全球首創；不得虛構實驗結果。',evidence:'研究問題、最接近基準線及可重現驗證計畫。'}
     ],
+    reuseAgent:{
+      fpga:[
+        {name:'尋找 IP / RTL 模組',can:'檢索廠商 IP、開源 RTL、規格書與示例設計，建立候選清單。',check:'核對授權、器件型號、EDA 工具版本、介面規格與安全來源。',risk:'功能相似不等於可直接整合；下載檔與第三方程式不可自動信任。',evidence:'官方產品文件、授權紀錄、版本與相容性清單。',human:'是否採用模組，必須由設計者決定。'},
+        {name:'連結專家與社群',can:'整理論壇討論、相似故障與已公開的工程經驗，草擬提問。',check:'追查回覆的適用器件、版本、時脈條件與案例限制。',risk:'論壇答案可能過時；AI 無法代替真實的專業合作與人脈。',evidence:'可回溯討論串、維護者確認與設計決策紀錄。',human:'技術合作、風險取捨與人際信任仍由人主導。'},
+        {name:'修改與實機驗證',can:'協助接線、生成 testbench、整理 lint 與 timing 報告。',check:'審查功能模擬、CDC、合成後／繞線後時序與上板行為。',risk:'模擬通過不等於時序收斂，更不等於板上可靠運作。',evidence:'測試平台、波形、STA、約束、版本與上板紀錄。',human:'簽核設計與驗收結果不能只靠 AI 自評。'}
+      ],
+      trade:[
+        {name:'建立市場資料基線',can:'協助檢索 WTO、FAO、USDA 等官方統計與市場趨勢。',check:'核對年份、國別、商品分類、數量／金額與計量單位。',risk:'不同口徑的數據不能直接相加；歷史資料不是現行市場。',evidence:'官方原始表格、年份、資料定義與取得日期。',human:'市場規模與研究問題的解讀由研究者負責。'},
+        {name:'比較在地市場報告',can:'彙整目標國市場報告、買家偏好及可能的物流路徑。',check:'區分公開資訊、推論與業界訪談；追查作者與更新日期。',risk:'多份二手報告可能引用同一來源，不能當成多重驗證。',evidence:'報告出處、版本、獨立來源及相互衝突之處。',human:'真實客戶需求需要業者或在地專家佐證。'},
+        {name:'釐清貿易障礙',can:'草擬關稅、檢疫、食品標示、進口許可的查核清單。',check:'向目的國主管機關查當期法規、HS 分類與產品別條件。',risk:'Agent 不可把舊法規或其他國家的規定當成現行合規結論。',evidence:'官方法規條文、適用日期、分類與專業確認。',human:'合規承諾與跨境商務決策不得授權 Agent 自行核定。'}
+      ]
+    },
+    gateAgent:[
+      {name:'來源可信度',can:'協助搜尋原始論文、官方文件、作者與資料發布日期。',check:'驗證出處、DOI／網址、版本與引用是否真的支持結論。',risk:'搜尋結果與網頁可能含惡意指令；不能讓網頁內容改寫 Agent 任務。',evidence:'原始連結、主張對應段落、檢索紀錄。',failure:'錯誤來源被當作研究起點，後續都圍繞錯誤資料。'},
+      {name:'閱讀與知識次序',can:'建立術語地圖、先備知識與建議閱讀路徑。',check:'核對概念定義，檢查資料是否缺漏必要先決條件。',risk:'流暢摘要容易隱藏未讀全文、跨章誤接與背景知識斷裂。',evidence:'術語定義、原文位置、先備閱讀路徑。',failure:'跳過關鍵前提後，Agent 會把誤讀一路傳給分析與圖表。'},
+      {name:'隱含假設與矛盾',can:'對照研究方法、適用情境，提出相反證據與假設。',check:'核對比較基準、實驗條件、獨立資料來源與反例。',risk:'同一篇論文被重述三次不等於三份證據；警惕迎合性。',evidence:'支持／反證矩陣、假設表、來源獨立性檢查。',failure:'重複引用被包裝成共識，研究者誤以為已有多方證實。'}
+    ],
+    knowledgeAgent:[
+      {can:'抽取數值、建立引文索引與來源對照。',verify:'核對原始數據、單位、版本、方法與不確定性。',risk:'格式工整、附 DOI 也可能是虛構或錯置引用。',evidence:'主張 → 原文 → 圖表／數值的可追溯對照。'},
+      {can:'自動建構分類、比較矩陣與概念關聯圖。',verify:'檢查概念是否相容、推理順序與反例有無被省略。',risk:'漂亮的架構圖不保證概念關係成立。',evidence:'明確定義、邏輯鏈與可回查的來源節點。'},
+      {can:'提出跨域應用假說、模擬與測試設計。',verify:'界定適用條件，驗證替代解釋與新情境的效能。',risk:'模擬成功不等於臨床／實機／真實網路已驗證。',evidence:'基準線、測試條件、重複結果與失敗案例。'}
+    ],
+    knowledgeCases:{
+      biomedical:['糖尿病檢測：低血糖區間原始量測與校正證據，而非整體準確率。','糖尿病檢測：樣本族群、感測器批次與偏差來源要有結構。','糖尿病檢測：跨人群及長期漂移仍需再驗證，不能直接臨床化。'],
+      fpga:['FPGA：模組規格與來源可回查，不拿錯版本當驗證依據。','FPGA：RTL／約束／IP 版本應形成可重建的設計關係。','FPGA：從功能模擬到 STA、CDC 與上板測試逐層驗證。'],
+      leo:['LEO 安全：協定與資料來源、時間戳及模型參數要可核對。','LEO 安全：拓樸、可見視窗與攻擊者假設需整合一致。','LEO 安全：動態交遞、都卜勒、強攻擊者下重驗方法。']
+    },
     gates:[
       ['關卡 1：來源不明','查出處與依據','不要因為文字流暢、引用很多就視為可信；追到原文與證據。'],
       ['關卡 2：知識沒有順序','補先備、排閱讀路徑','辨認未定義術語及前後脈絡，安排先理解哪些概念。'],
@@ -653,7 +793,7 @@ body{font-weight:500}
       {title:'5G/6G・LEO 安全',lab:'準靜態網路與弱攻擊者模型',real:'衛星交遞、可見視窗、多普勒、攻擊者適應',check:'動態拓樸／交遞情境與更強基準線測試。'}
     ]
   };
-  const state={page:0,layout:'single',presenting:false,ability:0,reading:2,readingMode:'roles',readingPlaying:false,reuse:'fpga',gate:0,risk:false,battery:0,criterion:0,field:0,balance:50,conclusion:'applied',discussion:{delegate:'',hold:'',proof:''},seconds:0,endAt:0,timerRunning:false};
+  const state={page:0,layout:'single',presenting:false,ability:0,reading:2,readingMode:'roles',readingPlaying:false,reuse:'fpga',reuseStep:0,gate:0,risk:false,battery:0,criterion:0,knowledgeCase:'biomedical',field:0,balance:50,conclusion:'applied',discussion:{delegate:'',hold:'',proof:''},seconds:0,endAt:0,timerRunning:false};
   const $=(id)=>document.getElementById(id);
   const esc=(s)=>String(s??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const label=(text,type='book')=>`<span class="tag ${type}">${text}</span>`;
@@ -679,14 +819,94 @@ body{font-weight:500}
   const rolePanel=`<div class="agent-step-overview"><span class="agent-step-number">${String(idx+1).padStart(2,'0')}</span><div><strong>${esc(steps[idx][0])}</strong><span>${esc(steps[idx][1])}</span></div></div><div class="agent-roles" role="region" aria-live="polite" aria-label="第 ${idx+1} 步人與 AI Agent 分工"><div class="agent-role role-ai"><b>AI 可協助</b><span>${esc(agent.can)}</span></div><div class="agent-role role-human"><b>研究者必查</b><span>${esc(agent.verify)}</span></div><div class="agent-role role-risk"><b>特別注意</b><span>${esc(agent.risk)}</span></div></div><div class="agent-evidence"><strong>驗收證據</strong><span>${esc(agent.evidence)}</span></div>`;
   const agentPanel=mode==='guardrails'?riskPanel:rolePanel;
   return page(2,`<div class="main-grid"><div class="card visual-flex"><div class="card-title">文獻回顧不是一鍵摘要 <span class="tag extend">逐步點選 / 播放</span></div><svg class="diagram" viewBox="0 0 750 392" role="img" aria-label="從搜尋到創新的七步文獻回顧流程圖，依序由上排向右，再向下，沿下排向左">${svgArrow('ar3','#91abb0')}${steps.map((v,i)=>{const [x,y]=nodes[i],w=158,h=139;return `<g data-action="reading" data-value="${i}" role="button" tabindex="0" class="svg-click ${idx===i?'active':''}" aria-label="${v[0]}"><rect class="box" x="${x}" y="${y}" width="${w}" height="${h}" rx="15" stroke-width="${idx===i?3.2:1.5}" stroke="${idx===i?'#7d212a':'#dce3e7'}" fill="${idx===i?'#f9eee9':'#fff'}"/><text x="${x+18}" y="${y+31}" font-size="17" fill="#80929a" font-weight="800">0${i+1}</text><text x="${x+79}" y="${y+88}" text-anchor="middle" fill="${idx===i?'#7d212a':'#1a2b36'}" font-size="31" font-weight="800">${v[0]}</text></g>`;}).join('')}${[0,1,2].map(i=>`<path d="M${178+i*185} 93 H${201+i*185}" stroke="#91abb0" stroke-width="3.5" marker-end="url(#ar3)"/>`).join('')}<path d="M654 163 V207" stroke="#91abb0" stroke-width="3.5" marker-end="url(#ar3)"/>${[0,1].map(i=>`<path d="M${575-i*185} 283 H${552-i*185}" stroke="#91abb0" stroke-width="3.5" marker-end="url(#ar3)"/>`).join('')}<text x="22" y="379" font-size="15" fill="#64747f">查找證據 → 理解脈絡 → 提出可檢驗的創新</text></svg><div class="action-row"><button class="btn small ${state.readingPlaying?'primary':'teal'}" type="button" data-action="reading-play">${state.readingPlaying?'暫停動畫':'▶ 自動播放流程'}</button><span class="muted" style="font-size:15px;align-self:center">可直接點選各步驟</span></div><div class="research-phase-strip" aria-label="文獻回顧的三個層次"><div class="phase"><span class="phase-id">01</span><strong>取得</strong><span>搜尋 · 篩選 · 閱讀</span></div><div class="phase"><span class="phase-id">02</span><strong>判讀</strong><span>分析 · 批判</span></div><div class="phase"><span class="phase-id">03</span><strong>轉化</strong><span>彙整 · 創新</span></div></div></div><div class="card agent-workflow"><div class="agent-workflow-header"><span class="agent-workflow-kicker">STEP ${String(idx+1).padStart(2,'0')} / 07 · 人與 AI Agent</span><div class="agent-mode-tabs" role="group" aria-label="切換 AI Agent 檢視模式"><button class="mini-tab ${mode==='roles'?'selected':''}" data-action="reading-mode" data-value="roles" aria-pressed="${mode==='roles'}" type="button">逐步分工</button><button class="mini-tab ${mode==='guardrails'?'selected':''}" data-action="reading-mode" data-value="guardrails" aria-pressed="${mode==='guardrails'}" type="button">共同風險</button></div></div>${agentPanel}<div class="agent-bookline"><b>原書核心</b>：自主決定閱讀順序、理解與批判；<b>AI Agent</b> 僅在授權工具範圍內協助，不能取代責任。</div></div></div>`, '資料基礎：《研究生完全求生手冊》第 17 章（閱讀能力）；AI Agent 分工與風險屬講者延伸。');}
-    function s4(){let fpga=state.reuse==='fpga';const vals=fpga?['找標準模組','進入專業社群','修改與整合']:['查官方統計','閱讀市場報告','辨認障礙'];const desc=fpga?['重用已經驗證的設計，不需每次從零開始。','透過討論群組與全球專業人士交換資訊。','把創意放在差異化與高附加價值的部分。']:['WTO、FAO、USDA：先建立市場規模的基礎。','各地報告：了解正式制度以外的市場條件。','釐清貿易障礙、情境限制與隱性規則。'];return page(3,`<div class="main-grid"><div class="card visual-flex"><div class="card-title">案例切換：跨域解題也有共同路徑</div><div class="action-row"><button class="mini-tab ${fpga?'selected':''}" type="button" data-action="reuse" data-value="fpga">數位電路 / FPGA</button><button class="mini-tab ${!fpga?'selected green':''}" type="button" data-action="reuse" data-value="trade">農產品國際貿易</button></div><svg class="diagram" viewBox="0 0 730 298" role="img" aria-label="從既有資源和專業人脈到重新整合的路徑">${svgArrow('ar4','#8da8ac')}<path d="M206 140H260M465 140h52" stroke="${fpga?'#7d212a':'#18766c'}" stroke-width="4" class="flowline" marker-end="url(#ar4)"/><path d="M105 58C280-8 430-8 625 58" stroke="#c6d5d8" fill="none" stroke-dasharray="5 7"/><path d="M105 223C280 281 445 281 625 223" stroke="#c6d5d8" fill="none" stroke-dasharray="5 7"/>${[0,1,2].map((i)=>{const x=[8,260,517][i];return `<rect x="${x}" y="80" width="205" height="116" rx="14" fill="${i===1?'#edf3fa':(fpga?'#f9eee9':'#e8f4f0')}" stroke="${i===1?'#b9cee4':(fpga?'#dabbb1':'#b1d9d0')}"/><text x="${x+103}" y="119" text-anchor="middle" font-size="15" font-weight="700" fill="#64747f">STEP 0${i+1}</text><text x="${x+103}" y="153" text-anchor="middle" font-size="23" font-weight="800" fill="#1a2b36">${vals[i]}</text>`;}).join('')}<text x="365" y="40" text-anchor="middle" font-size="20" font-weight="800" fill="#305f9b">站在巨人的肩膀上</text><text x="365" y="279" text-anchor="middle" font-size="15" fill="#64747f">既有知識 × 人際網絡 × 情境調整</text></svg><div class="image-panel" style="height:90px;flex:none"><img src="${ASSET.research}" alt="研究者與人工智慧輔助知識搜索的概念圖，作為跨領域研究示例" style="object-position:center 38%"/><span class="image-credit">AI 概念配圖</span></div></div><div class="card column-stack"><div class="card-kicker">${fpga?'EXAMPLE / DIGITAL CIRCUITS':'EXAMPLE / AGRICULTURAL TRADE'}</div>${desc.map((v,i)=>`<div class="feature-stat"><div style="font-size:18px;font-weight:800;color:${fpga?'var(--primary)':'var(--secondary)'}" class="mono">0${i+1}</div><span style="font-size:12px;color:var(--text-main)">${v}</span></div>`).join('')}<div class="inline-foot teal-foot" style="margin-top:auto"><strong>AI Agent 延伸</strong><br>可以找模組與整理數據；專業人脈、可靠性判斷與最終整合仍需要研究者主導。</div></div></div>`);}
-  function s5(){const a=info.gates[state.gate];return page(4,`<div class="main-grid"><div class="card visual-flex"><div class="card-title">資料進入結論前，先經過三道關卡</div><svg class="diagram" viewBox="0 0 730 318" role="img" aria-label="原始網路資訊通過來源、閱讀順序及假設三道關卡，生成可信知識">${svgArrow('ar5','#b0bfc4')}<rect x="8" y="113" width="125" height="85" rx="12" fill="#edf3fa" stroke="#c9dbed"/><text x="70" y="147" fill="#305f9b" font-size="21" text-anchor="middle" font-weight="800">網路資訊</text><text x="70" y="174" fill="#64747f" font-size="15" text-anchor="middle">真假混雜</text><path d="M133 155h50" stroke="#b0bfc4" stroke-width="3" marker-end="url(#ar5)"/>${info.gates.map((v,i)=>{let x=183+i*136;return `<g class="svg-click ${state.gate===i?'active':''}" data-action="gate" data-value="${i}" tabindex="0" role="button" aria-label="${v[0]}"><rect class="box" x="${x}" y="95" width="120" height="123" rx="12" fill="${state.gate===i?'#f9eee9':'white'}" stroke="${state.gate===i?'#7d212a':'#dce3e7'}"/><text x="${x+60}" y="126" font-size="11" font-weight="800" fill="#7d212a" text-anchor="middle">關卡 ${i+1}</text><text x="${x+60}" y="162" font-size="19" fill="#1a2b36" text-anchor="middle" font-weight="800">${['查來源','排次序','比假設'][i]}</text><text x="${x+60}" y="188" font-size="13" fill="#64747f" text-anchor="middle">點選檢視</text></g>`;}).join('')}${[0,1].map(i=>`<path d="M${303+i*136} 155h16" stroke="#b0bfc4" stroke-width="2.2" marker-end="url(#ar5)"/>`).join('')}<path d="M711 155h8" stroke="#18766c" stroke-width="2"/><text x="365" y="50" text-anchor="middle" fill="#64747f" font-size="17">查核流程會阻擋「好看的錯誤」直接變成結論</text><path d="M70 235C150 296 560 296 646 235" fill="none" stroke="${state.risk?'#d66a3b':'#a9cec4'}" stroke-width="3" class="flowline"/><text x="365" y="304" text-anchor="middle" font-size="15" fill="${state.risk?'#b45a31':'#18766c'}">${state.risk?'風險演示：跳過查核，錯誤沿鏈條擴大':'查核閉環：回看來源、前提與反例'}</text></svg><div class="action-row"><button class="btn small ${state.risk?'':'teal'}" type="button" data-action="risk" data-value="off">✓ 保留查核</button><button class="btn small ${state.risk?'primary':''}" type="button" data-action="risk" data-value="on">⚠ 模擬跳過查核</button></div><div class="outcome-panel ${state.risk?'is-risk':'is-verified'}" aria-live="polite"><div class="outcome-symbol" aria-hidden="true">${state.risk?'!':'✓'}</div><div class="outcome-content"><strong>${state.risk?'跳過查核：結論可能失真':'完成查核：結論才能被檢驗'}</strong><span>${state.risk?'錯誤前提可沿著摘要、引文與圖表一路傳遞。':'來源可追溯、閱讀脈絡清楚、前提條件明確。'}</span></div></div></div><div class="card column-stack"><div class="card-kicker">${a[0]}</div><div class="detail reveal"><div class="stage-index" aria-hidden="true">0${state.gate+1}<small>/ 03</small></div><strong>${a[1]}</strong><p>${a[2]}</p></div><div class="inline-foot ${state.risk?'':'teal-foot'}" style="background:${state.risk?'#fff2e9':''};border-left-color:${state.risk?'#d66a3b':''}"><strong>${state.risk?'示意：一人同溫層':'Agent 延伸：避免迎合性'}</strong><br>${state.risk?'同一個錯誤假設可能被反覆摘要、引用和畫圖，最後看起來像多份一致證據。':'原書指出社群同溫層風險；講者進一步對照 AI 迎合性與錯誤逐步傳遞。'}</div><div class="action-row" style="margin-top:auto">${info.gates.map((g,i)=>`<button class="mini-tab ${state.gate===i?'selected':''}" type="button" data-action="gate" data-value="${i}">0${i+1} ${['來源','脈絡','假設'][i]}</button>`).join('')}</div></div></div>`);}
+    function s4(){
+    const fpga=state.reuse==='fpga', step=state.reuseStep, data=info.reuseAgent[state.reuse][step];
+    const names=fpga?['找標準模組','進入專業社群','修改與整合']:['查官方統計','閱讀市場報告','辨認障礙'];
+    const color=fpga?'var(--primary)':'var(--secondary)';
+    return page(3,`<div class="main-grid">
+      <div class="card visual-flex case-stage-left">
+        <div class="card-title">站在巨人的肩膀上 <span class="tag book">原書案例</span></div>
+        <div class="action-row case-domain-switch" role="group" aria-label="切換案例">
+          <button type="button" class="mini-tab ${fpga?'selected':''}" data-action="reuse" data-value="fpga" aria-pressed="${fpga}">數位電路 / FPGA</button>
+          <button type="button" class="mini-tab ${!fpga?'selected green':''}" data-action="reuse" data-value="trade" aria-pressed="${!fpga}">農產品國際貿易</button>
+        </div>
+        <svg class="diagram case-diagram" viewBox="0 0 730 288" role="img" aria-label="可選取三個步驟的跨領域知識利用流程">
+          ${svgArrow('ar4','#9db6ba')}
+          <path d="M208 142H258M465 142h52" stroke="${fpga?'#7d212a':'#18766c'}" stroke-width="3.5" class="flowline" marker-end="url(#ar4)" />
+          <path d="M112 60C285-8 425-8 618 60" stroke="#c6d5d8" fill="none" stroke-dasharray="5 7" />
+          ${names.map((v,i)=>{const x=[8,260,517][i];const active=i===step;return `<g data-action="reuse-step" data-value="${i}" class="svg-click ${active?'active':''}" role="button" tabindex="0" aria-label="查看${v}的 AI Agent 分工"><rect class="box" x="${x}" y="81" width="205" height="125" rx="14" fill="${active?(fpga?'#f9eee9':'#e8f4f0'):'#fff'}" stroke="${active?(fpga?'#7d212a':'#18766c'):'#dce3e7'}" stroke-width="${active?'3':'1.5'}" /><text x="${x+102}" y="119" text-anchor="middle" font-size="15" font-weight="700" fill="#64747f">STEP 0${i+1}</text><text x="${x+102}" y="160" text-anchor="middle" font-size="23" font-weight="850" fill="#1a2b36">${v}</text></g>`;}).join('')}
+          <text x="365" y="44" text-anchor="middle" font-size="18" font-weight="800" fill="#305f9b">利用公開知識，再做專業整合</text>
+          <text x="365" y="255" text-anchor="middle" font-size="16" fill="#64747f">依序點選各步驟，查看 Agent 的能力界線</text>
+        </svg>
+        <div class="case-summary-track" aria-label="三階段原書方法">${names.map((v,i)=>`<button type="button" class="case-track-item ${step===i?'is-current':''}" data-action="reuse-step" data-value="${i}" aria-pressed="${step===i}"><span>0${i+1}</span><b>${v}</b></button>`).join('')}</div>
+        <div class="case-bookline"><b>原書重點：</b>${fpga?'善用成熟模組與全球專業人脈；創意聚焦在高附加價值整合。':'官方統計與在地報告交叉閱讀，還要辨認實際貿易障礙。'}</div>
+      </div>
+      <div class="card case-agent-panel">
+        <div class="case-panel-head"><span class="tag extend">講者延伸 · AI Agent</span><span class="mono case-panel-step">0${step+1} / 03</span></div>
+        <h2>${data.name}</h2>
+        <div class="case-agent-grid">
+          <div class="case-agent-row is-can"><b>AI 可協助</b><span>${data.can}</span></div>
+          <div class="case-agent-row is-verify"><b>研究者必查</b><span>${data.check}</span></div>
+          <div class="case-agent-row is-risk"><b>特別注意</b><span>${data.risk}</span></div>
+        </div>
+        <div class="case-evidence"><b>驗收證據</b><span>${data.evidence}</span></div>
+        <div class="case-human"><strong>不能外包的決定</strong><span>${data.human}</span></div>
+      </div>
+    </div>`, '原書數位電路／農產貿易案例；AI Agent 分工為講者延伸。<a href="https://docs.amd.com/r/en-US/ug892-vivado-design-flows-overview/Validating-the-IP" target="_blank" rel="noopener noreferrer">AMD IP 驗證指南</a>');
+  }
+
+  function s5(){const g=state.gate, a=info.gates[g],agent=info.gateAgent[g];return page(4,`<div class="main-grid"><div class="card visual-flex gate-stage-left">
+    <div class="card-title">三道資訊查核關卡 <span class="tag book">原書主張</span></div>
+    <svg class="diagram gate-diagram" viewBox="0 0 730 318" role="img" aria-label="網路資訊經由來源查核、閱讀次序與假設比對，才能進入知識判斷">${svgArrow('ar5','#b0bfc4')}
+      <rect x="8" y="113" width="125" height="85" rx="12" fill="#edf3fa" stroke="#c9dbed"/><text x="70" y="147" fill="#305f9b" font-size="21" text-anchor="middle" font-weight="800">網路資訊</text><text x="70" y="174" fill="#64747f" font-size="15" text-anchor="middle">真假混雜</text><path d="M133 155h50" stroke="#b0bfc4" stroke-width="3" marker-end="url(#ar5)"/>
+      ${info.gates.map((v,i)=>{let x=183+i*136;return `<g class="svg-click ${g===i?'active':''}" data-action="gate" data-value="${i}" tabindex="0" role="button" aria-label="查看${v[0]}"><rect class="box" x="${x}" y="95" width="120" height="123" rx="12" fill="${g===i?'#f9eee9':'white'}" stroke="${g===i?'#7d212a':'#dce3e7'}" stroke-width="${g===i?'3':'1.5'}"/><text x="${x+60}" y="126" font-size="13" font-weight="800" fill="#7d212a" text-anchor="middle">關卡 ${i+1}</text><text x="${x+60}" y="162" font-size="19" fill="#1a2b36" text-anchor="middle" font-weight="800">${['查來源','排次序','比假設'][i]}</text><text x="${x+60}" y="188" font-size="13" fill="#64747f" text-anchor="middle">點選檢視</text></g>`;}).join('')}
+      ${[0,1].map(i=>`<path d="M${303+i*136} 155h16" stroke="#b0bfc4" stroke-width="2.2" marker-end="url(#ar5)"/>`).join('')}
+      <text x="365" y="50" text-anchor="middle" fill="#64747f" font-size="17">三次檢查，不代表三次獨立證據</text>
+      <path d="M70 235C150 296 560 296 646 235" fill="none" stroke="${state.risk?'#d66a3b':'#a9cec4'}" stroke-width="3" class="flowline"/>
+      <text x="365" y="304" text-anchor="middle" font-size="15" fill="${state.risk?'#b45a31':'#18766c'}">${state.risk?'跳關示意：一個錯誤可放大成假共識':'查核閉環：來源 → 前提 → 反例'}</text>
+    </svg>
+    <div class="action-row gate-risk-controls" role="group" aria-label="切換查核與風險示範"><button type="button" class="btn small ${state.risk?'':'teal'}" data-action="risk" data-value="off" aria-pressed="${!state.risk}">✓ 保留查核</button><button type="button" class="btn small ${state.risk?'primary':''}" data-action="risk" data-value="on" aria-pressed="${state.risk}">⚠ 模擬跳過查核</button></div>
+    <div class="outcome-panel gate-cascade ${state.risk?'is-risk':'is-verified'}" aria-live="polite"><div class="outcome-symbol" aria-hidden="true">${state.risk?'!':'✓'}</div><div class="outcome-content"><strong>${state.risk?'一人同溫層：錯誤持續放大':'獨立查核：讓結論可被反駁'}</strong><span>${state.risk?'二手摘要 → 重複引用 → 漂亮圖表，可能都源自同一個錯誤。':'保留來源、核對前提、主動尋找不同方法與反例。'}</span></div></div>
+  </div><div class="card gate-agent-panel">
+    <div class="case-panel-head"><span class="tag extend">講者延伸 · AI Agent</span><span class="mono case-panel-step">0${g+1} / 03</span></div>
+    <h2>${agent.name}</h2>
+    <div class="gate-bookline"><b>原書過關動作：</b>${a[1]}</div>
+    <div class="case-agent-grid">
+      <div class="case-agent-row is-can"><b>AI 可協助</b><span>${agent.can}</span></div>
+      <div class="case-agent-row is-verify"><b>研究者必查</b><span>${agent.check}</span></div>
+      <div class="case-agent-row is-risk"><b>Agent 風險</b><span>${agent.risk}</span></div>
+    </div>
+    <div class="case-evidence"><b>驗收證據</b><span>${agent.evidence}</span></div>
+    <div class="gate-failure ${state.risk?'emphasized':''}"><b>${state.risk?'跳關後的可能後果':'必須阻斷的連鎖錯誤'}</b><span>${agent.failure}</span></div>
+    <div class="gate-mini-tabs" role="group" aria-label="選擇查核關卡">${info.gates.map((v,i)=>`<button type="button" class="mini-tab ${g===i?'selected':''}" data-action="gate" data-value="${i}" aria-pressed="${g===i}">0${i+1} ${['來源','脈絡','假設'][i]}</button>`).join('')}</div>
+  </div></div>`, '原書三關卡／同溫層；Agent 風險示例為講者延伸。<a href="https://genai.owasp.org/top-10-for-agentic-applications-2026/" target="_blank" rel="noopener noreferrer">OWASP Agentic Top 10</a>');}
+
   function s6(){const x=info.battery[state.battery];const arr=['電池材料','能源比較','整車效率','供電來源'];return page(5,`<div class="main-grid"><div class="card visual-flex"><div class="card-title">同一個結論，需要四層不同證據 <span class="tag caution">原書歷史情境</span></div><div class="step-row">${arr.map((n,i)=>`<button class="step-box ${i===state.battery?'active':''}" type="button" data-action="battery" data-value="${i}"><span class="step-count">LEVEL 0${i+1}</span><strong>${n}</strong></button>`).join('')}</div><svg class="diagram" viewBox="0 0 720 295" role="img" aria-label="從石墨烯電池特性、能源密度比較、整車效率到電力供應的四層推論圖">${svgArrow('ar6','#a9b9be')}<rect x="12" y="45" width="147" height="150" rx="14" fill="${state.battery===0?'#f9eee9':'#fff'}" stroke="${state.battery===0?'#7d212a':'#dce3e7'}" stroke-width="2"/><rect x="37" y="87" width="93" height="49" rx="6" fill="none" stroke="#7d212a" stroke-width="4"/><path d="M132 101h9v22h-9" fill="#7d212a"/><path d="M49 110h62" stroke="#d66a3b" stroke-width="4" class="flowline"/><text x="86" y="170" text-anchor="middle" font-weight="800" fill="#7d212a" font-size="14">材料性能</text>
 <rect x="194" y="45" width="147" height="150" rx="14" fill="${state.battery===1?'#f9eee9':'#fff'}" stroke="${state.battery===1?'#7d212a':'#dce3e7'}" stroke-width="2"/><path d="M214 124h106M235 104l18-21h33l20 21M232 125a12 12 0 1 0 24 0M284 125a12 12 0 1 0 24 0" fill="none" stroke="#305f9b" stroke-width="4"/><text x="267" y="170" text-anchor="middle" font-weight="800" fill="#305f9b" font-size="14">系統比較</text>
 <rect x="378" y="45" width="147" height="150" rx="14" fill="${state.battery===2?'#f9eee9':'#fff'}" stroke="${state.battery===2?'#7d212a':'#dce3e7'}" stroke-width="2"/><circle cx="451" cy="110" r="32" stroke="#18766c" fill="none" stroke-width="4"/><path d="M451 110l20-16M430 130l-6 12M471 130l7 12" stroke="#18766c" stroke-width="4"/><text x="451" y="170" text-anchor="middle" font-weight="800" fill="#18766c" font-size="14">動力效率</text>
 <rect x="563" y="45" width="145" height="150" rx="14" fill="${state.battery===3?'#f9eee9':'#fff'}" stroke="${state.battery===3?'#7d212a':'#dce3e7'}" stroke-width="2"/><circle cx="635" cy="98" r="20" fill="#ffedd9" stroke="#d66a3b" stroke-width="3"/><path d="M619 130l-12 15h56l-12-15M617 137h36" stroke="#d66a3b" stroke-width="3"/><text x="636" y="170" text-anchor="middle" font-weight="800" fill="#d66a3b" font-size="14">能源來源</text>
 ${[159,341,525].map(v=>`<path d="M${v} 120 h34" stroke="#a9b9be" stroke-width="3" class="flowline" marker-end="url(#ar6)"/>`).join('')}<text x="365" y="238" text-anchor="middle" font-size="15" font-weight="800" fill="#1a2b36">材料數字 ≠ 整車性能 ≠ 產業取代</text><text x="365" y="267" text-anchor="middle" font-size="12" fill="#64747f">每跨越一層，都需要新的基準、邊界條件與證據</text></svg><div class="action-row"><button class="btn small" type="button" data-action="battery-prev" ${state.battery===0?'disabled':''}>← 上一層</button><button class="btn small teal" type="button" data-action="battery-next" ${state.battery===3?'disabled':''}>下一層 →</button></div></div><div class="card column-stack"><div class="card-kicker">${x.title}</div><div class="large-numeral reveal">${x.big}</div><div class="number-caption">${x.label}</div><div class="detail reveal"><strong style="font-size:14px">該層推論與限制</strong><p>${x.detail}</p></div><div class="inline-foot"><strong>這一層不能跳過的問題</strong><br>${x.key}</div><div style="color:#a05b35;font-size:10.5px;line-height:1.7">所有數字均依提供的第 17 章導讀稿轉述；屬書中引用與展望，未於本頁重新驗證原論文或 2026 年現況。</div></div></div>`,'歷史案例與數值取自使用者提供的第 17 章 v4 導讀稿；不是本站新增測量，也不代表 2026 年的產業現況。');}
-  function s7(){const c=info.criteria[state.criterion];return page(6,`<div class="main-grid"><div class="card visual-flex"><div class="card-title">表 6｜資訊與知識的對照 <span class="tag book">原書表 6</span></div><table class="compare-table"><thead><tr><th>判準</th><th>資訊 INFORMATION</th><th>知識 KNOWLEDGE</th></tr></thead><tbody>${info.criteria.map((r,i)=>`<tr class="${state.criterion===i?'highlight':''}" data-row="${i}"><td><button type="button" data-action="criterion" data-value="${i}" class="mini-tab ${state.criterion===i?'selected':''}">${r[0]}</button></td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody></table><svg class="diagram" viewBox="0 0 700 135" role="img" aria-label="將散亂資訊經過驗證組織與推理，轉為可運用的知識">${svgArrow('ar7','#8dacb0')}<g fill="#b8c4c9">${[[25,26],[67,67],[30,98],[108,30],[94,99],[142,75],[150,13]].map(v=>`<circle cx="${v[0]}" cy="${v[1]}" r="${4+v[1]%6}"/>`).join('')}</g><path d="M195 64H289" stroke="#7d212a" stroke-width="3" class="flowline" marker-end="url(#ar7)"/><rect x="303" y="28" width="105" height="72" rx="12" fill="#f9eee9" stroke="#e0c3ba"/><text x="355" y="57" text-anchor="middle" fill="#7d212a" font-size="20" font-weight="800">驗證</text><text x="355" y="78" text-anchor="middle" fill="#7d212a" font-size="17">組織 · 推理</text><path d="M412 64H514" stroke="#18766c" stroke-width="3" class="flowline" marker-end="url(#ar7)"/><circle cx="576" cy="65" r="46" fill="#e8f4f0" stroke="#18766c" stroke-width="2"/><path d="M555 65l15 14 27-32" fill="none" stroke="#18766c" stroke-width="6" stroke-linecap="round"/><text x="638" y="70" fill="#18766c" font-size="20" font-weight="800">可活用</text></svg></div><div class="card column-stack"><div class="card-kicker">SELECTED CRITERION</div><div class="detail reveal"><div class="stage-index" aria-hidden="true">0${state.criterion+1}<small>/ 03</small></div><strong>${c[0]}：${c[2]}</strong><p>${c[3]}</p></div><div class="statement" style="margin-top:7px">「自我學習能力的養成是教育的終點。」</div><div class="inline-foot teal-foot"><strong>延伸到 AI Agent</strong><br>稽核 AI 產出與稽核自己的研究，都應要求明確前提、可追溯證據、可重新驗證。</div></div></div>`);}
+  function s7(){const c=info.criteria[state.criterion],agent=info.knowledgeAgent[state.criterion];const examples=info.knowledgeCases[state.knowledgeCase];return page(6,`<div class="main-grid">
+    <div class="card visual-flex knowledge-stage-left">
+      <div class="card-title">表 6｜資訊與知識的對照 <span class="tag book">原書表 6</span></div>
+      <table class="compare-table"><thead><tr><th>判準</th><th>資訊 INFORMATION</th><th>知識 KNOWLEDGE</th></tr></thead><tbody>${info.criteria.map((r,i)=>`<tr class="${state.criterion===i?'highlight':''}" data-row="${i}"><td><button type="button" data-action="criterion" data-value="${i}" class="mini-tab ${state.criterion===i?'selected':''}" aria-pressed="${state.criterion===i}">${r[0]}</button></td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody></table>
+      <svg class="diagram knowledge-diagram" viewBox="0 0 700 135" role="img" aria-label="散亂資訊經過驗證、組織與推理，轉化為能重新檢驗與活用的知識">${svgArrow('ar7','#8dacb0')}<g fill="#b8c4c9">${[[25,26],[67,67],[30,98],[108,30],[94,99],[142,75],[150,13]].map(v=>`<circle cx="${v[0]}" cy="${v[1]}" r="${4+v[1]%6}"/>`).join('')}</g><path d="M195 64H289" stroke="#7d212a" stroke-width="3" class="flowline" marker-end="url(#ar7)"/><rect x="303" y="28" width="105" height="72" rx="12" fill="#f9eee9" stroke="#e0c3ba"/><text x="355" y="57" text-anchor="middle" fill="#7d212a" font-size="20" font-weight="800">驗證</text><text x="355" y="78" text-anchor="middle" fill="#7d212a" font-size="17">組織 · 推理</text><path d="M412 64H514" stroke="#18766c" stroke-width="3" class="flowline" marker-end="url(#ar7)"/><circle cx="576" cy="65" r="46" fill="#e8f4f0" stroke="#18766c" stroke-width="2"/><path d="M555 65l15 14 27-32" fill="none" stroke="#18766c" stroke-width="6" stroke-linecap="round"/><text x="638" y="70" fill="#18766c" font-size="20" font-weight="800">可活用</text></svg>
+      <div class="knowledge-quote">「自我學習能力的養成是教育的終點。」<span class="tag book">原書核心</span></div>
+    </div>
+    <div class="card knowledge-agent-panel">
+      <div class="case-panel-head"><span class="tag extend">講者延伸 · AI Agent</span><span class="mono case-panel-step">0${state.criterion+1} / 03</span></div>
+      <h2>${c[0]}：${c[2]}</h2>
+      <div class="knowledge-criterion-explain">${c[3]}</div>
+      <div class="case-agent-grid">
+        <div class="case-agent-row is-can"><b>AI 可協助</b><span>${agent.can}</span></div>
+        <div class="case-agent-row is-verify"><b>研究者必查</b><span>${agent.verify}</span></div>
+        <div class="case-agent-row is-risk"><b>不可誤認</b><span>${agent.risk}</span></div>
+      </div>
+      <div class="case-evidence"><b>驗收證據</b><span>${agent.evidence}</span></div>
+      <div class="knowledge-case-block"><div class="knowledge-case-head"><b>跨領域範例</b><div class="knowledge-case-tabs" role="group" aria-label="選擇研究領域"><button type="button" class="mini-tab ${state.knowledgeCase==='biomedical'?'selected':''}" data-action="knowledge-case" data-value="biomedical" aria-pressed="${state.knowledgeCase==='biomedical'}">生醫</button><button type="button" class="mini-tab ${state.knowledgeCase==='fpga'?'selected':''}" data-action="knowledge-case" data-value="fpga" aria-pressed="${state.knowledgeCase==='fpga'}">FPGA</button><button type="button" class="mini-tab ${state.knowledgeCase==='leo'?'selected':''}" data-action="knowledge-case" data-value="leo" aria-pressed="${state.knowledgeCase==='leo'}">LEO</button></div></div><p>${examples[state.criterion]}</p></div>
+    </div>
+  </div>`, '原書表 6；生醫／FPGA／LEO 範例為講者延伸，非實測。<a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence" target="_blank" rel="noopener noreferrer">NIST AI RMF</a>');}
+
   function s8(){const f=info.fields[state.field];return page(7,`<div class="main-grid"><div class="card visual-flex"><div class="card-title">為什麼「模擬成功」不等於「部署可靠」？</div><div class="image-panel" style="height:132px;flex:none"><img src="${ASSET.simreal}" alt="從實驗室、半導體、醫學儀器到真實場域的技術轉化概念配圖"/><span class="image-credit">AI 生成概念配圖・非研究證據</span></div><svg class="diagram" viewBox="0 0 720 218" role="img" aria-label="模擬條件與真實部署間有一個必須稽核的落差">${svgArrow('ar8','#a7bcc0')}<rect x="12" y="31" width="227" height="154" rx="14" fill="#edf3fa" stroke="#afcbe7" stroke-width="2"/><text x="125" y="78" font-weight="800" font-size="20" fill="#305f9b" text-anchor="middle">LAB / MODEL</text><text x="125" y="108" fill="#405b75" font-size="13" text-anchor="middle">受控制的條件</text><text x="125" y="132" fill="#64747f" font-size="12" text-anchor="middle">測試環境成立</text><rect x="480" y="31" width="228" height="154" rx="14" fill="#e8f4f0" stroke="#a1d3c5" stroke-width="2"/><text x="594" y="78" font-weight="800" font-size="20" fill="#18766c" text-anchor="middle">REAL WORLD</text><text x="594" y="108" fill="#2e7268" font-size="13" text-anchor="middle">條件會改變</text><text x="594" y="132" fill="#64747f" font-size="12" text-anchor="middle">結果需要重驗</text><path d="M239 109h241" class="flowline" stroke="#d66a3b" stroke-width="4" marker-end="url(#ar8)"/><circle cx="361" cy="108" r="59" fill="#fff6ed" stroke="#d66a3b" stroke-width="2.5" stroke-dasharray="5 7"/><text x="361" y="98" text-anchor="middle" font-size="18" font-weight="800" fill="#b75f32">GAP</text><text x="361" y="121" text-anchor="middle" font-size="11" fill="#b75f32">條件差距</text><text x="361" y="205" text-anchor="middle" fill="#64747f" font-size="12">補上分層測試、驗收標準與重驗證據</text></svg><div class="legend"><span><i class="dot blue"></i>模型成立</span><span><i class="dot red"></i>條件落差</span><span><i class="dot green"></i>真實驗證</span></div></div><div class="card column-stack"><div class="card-kicker">從自己的領域選一個案例</div><div class="field-cards">${info.fields.map((r,i)=>`<button type="button" class="field-card ${state.field===i?'selected':''}" data-action="field" data-value="${i}"><strong>${r.title}</strong><small>${['CGM','Ophthalmology','Hardware','LEO Network'][i]}</small></button>`).join('')}</div><div class="detail reveal"><strong>${f.title}</strong><p><b>實驗室：</b>${f.lab}</p><p><b>真實環境：</b>${f.real}</p></div><div class="inline-foot teal-foot"><strong>應如何驗收？</strong><br>${f.check}</div></div></div>`,'原書核心定義：「在明確臚列的條件下，維持可被重複檢證的因果關係或解決方案的性能」；四領域案例為講者延伸示意。');}
   function s9(){const val=Number(state.balance);const copy=val<30?'過度偏向點子，可能低估量產與驗證風險。':val>70?'過度偏向檢核，可能讓探索性創意難以啟動。':'設計想像與驗證工程互相補位，使創意真正可被採用。';return page(8,`<div class="main-grid"><div class="card visual-flex"><div class="card-title">從發明到量產：兩種專業需要協作</div><svg class="diagram" viewBox="0 0 720 314" role="img" aria-label="創意發明與工程品質保證共同支撐可持續使用的成果">${svgArrow('ar9','#91aaaf')}<rect x="18" y="25" width="256" height="171" rx="14" fill="#f9eee9" stroke="#dec0b7"/><circle cx="145" cy="90" r="35" fill="none" stroke="#7d212a" stroke-width="3"/><path d="M132 111v13h26v-13M135 133h20" stroke="#7d212a" stroke-width="3" fill="none"/><path d="M145 51v-13M103 70l-10-8M185 70l10-8" stroke="#d66a3b" stroke-width="3"/><text x="145" y="159" text-anchor="middle" fill="#7d212a" font-size="19" font-weight="800">創意 / Design</text><text x="145" y="183" text-anchor="middle" fill="#64747f" font-size="12">打開新的可能性</text><rect x="446" y="25" width="256" height="171" rx="14" fill="#e8f4f0" stroke="#afdad1"/><path d="M574 52l48 17v35c0 32-23 47-48 57-25-10-48-25-48-57V69Z" fill="none" stroke="#18766c" stroke-width="4"/><path d="M552 100l18 18 29-35" stroke="#18766c" stroke-width="6" fill="none"/><text x="574" y="178" text-anchor="middle" fill="#18766c" font-size="19" font-weight="800">品質 / QA</text><path d="M275 112H440" stroke="#9ab5b9" stroke-width="3" class="flowline" marker-end="url(#ar9)"/><text x="360" y="88" text-anchor="middle" font-size="14" font-weight="800" fill="#305f9b">互補</text><rect x="191" y="226" width="338" height="65" rx="13" fill="#edf3fa" stroke="#c4d8eb"/><text x="360" y="256" text-anchor="middle" fill="#305f9b" font-size="18" font-weight="800">值得信任、能夠落地的成果</text><text x="360" y="278" text-anchor="middle" fill="#64747f" font-size="11">創新不是量產品質的替代品</text></svg><div class="legend"><span><i class="dot red"></i>MIT Media Lab：設計與發明</span><span><i class="dot green"></i>量產工程：一致性與可靠性</span></div></div><div class="card column-stack"><div class="card-kicker">互動概念演示 · 非研究數據</div><div style="display:flex;justify-content:space-between;font-weight:800;font-size:12px"><span style="color:var(--primary)">創意探索</span><span style="color:var(--secondary)">嚴謹驗證</span></div><input class="range" id="balance-range" type="range" min="0" max="100" step="5" value="${val}" aria-label="調整創意與嚴謹驗證的概念權重"/><div style="display:flex;gap:4px;height:23px;border-radius:8px;overflow:hidden"><div id="balance-left" style="width:${100-val}%;background:#7d212a;transition:width .2s"></div><div id="balance-right" style="width:${val}%;background:#18766c;transition:width .2s"></div></div><div id="balance-desc" class="detail" style="margin-top:8px"><strong>兩者相互補位</strong><p>${copy}</p></div><div class="inline-foot">原書以 MIT Media Lab 的設計思維與手機量產品質為例，說明創新與嚴謹並非零和。</div><div style="font-size:10.5px;color:var(--text-muted);margin-top:auto">滑桿只用來理解平衡關係，沒有代表任何公司或研究結果的真實比例。</div></div></div>`);}
   function s10(){const app=state.conclusion==='applied';return page(9,`<div class="main-grid"><div class="card visual-flex"><div class="card-title">如何從產學落差，轉向後發優勢？ <span class="tag caution">原書當時觀察</span></div><svg class="diagram" viewBox="0 0 730 350" role="img" aria-label="學術界高成本原創模式與台灣產業短週期需求的差異，藉由文獻導向創新策略交會">${svgArrow('ar10','#95aeb4')}<rect x="12" y="23" width="318" height="113" rx="14" fill="#edf3fa" stroke="#c4d9ea"/><text x="35" y="56" font-size="16" font-weight="800" fill="#305f9b">學術界慣用模式</text><text x="35" y="86" font-size="14" fill="#49677e">高成本・高風險・長研發期</text><text x="35" y="111" font-size="11" fill="#64747f">原書對歐美原創研究路線的對照</text><rect x="398" y="23" width="318" height="113" rx="14" fill="#f9eee9" stroke="#e2c8c1"/><text x="423" y="56" font-size="16" font-weight="800" fill="#7d212a">台灣產業現實需求</text><text x="423" y="86" font-size="14" fill="#80544c">低成本・短週期・快速應用</text><text x="423" y="111" font-size="11" fill="#64747f">原書當時的產業描述</text><path d="M173 136v75h191 M556 136v75H365" fill="none" stroke="#94b3b5" stroke-width="3" class="flowline" marker-end="url(#ar10)"/><rect x="220" y="187" width="292" height="82" rx="14" fill="#e8f4f0" stroke="#93cdbd" stroke-width="2"/><text x="365" y="220" fill="#18766c" text-anchor="middle" font-weight="800" font-size="18">善用公開知識與技術</text><text x="365" y="246" fill="#487e75" text-anchor="middle" font-size="13">文獻回顧 × 模組整合 × 驗證</text><path d="M365 270v40" stroke="#18766c" stroke-width="3" marker-end="url(#ar10)"/><text x="365" y="337" text-anchor="middle" fill="#7d212a" font-weight="800" font-size="18">低成本 · 低風險 · 高產出</text></svg><div class="legend"><span>第 17 章：研究能力活用</span><span>→</span><span>第 18 章：後發優勢</span></div></div><div class="card column-stack"><div class="card-title">兩條研究路徑，哪一條更符合現場需求？</div><div class="action-row"><button class="mini-tab ${!app?'selected':''}" type="button" data-action="conclusion" data-value="original">從零原創</button><button class="mini-tab green ${app?'selected':''}" type="button" data-action="conclusion" data-value="applied">公開知識再創新</button></div><div class="detail reveal"><strong>${app?'後發優勢：站在既有成果上':'高風險原創：從基礎開始突破'}</strong><p>${app?'先查已有技術與成果，再依當地限制修改、驗證、整合，將資源留給最有價值的問題。':'可能創造高度新穎的基礎知識，但在有限成本與時間下，未必適合每個產業問題。'}</p></div><div class="statement">博士的優勢，不是記住最多知識；<br><strong>是能在陌生問題中建立可靠解法。</strong></div><div class="inline-foot"><strong>資料邊界</strong><br>原書提及當時價格與開發人力的比較，不能直接解讀為 2026 年台灣產業的普遍現況。</div></div></div>`);}
@@ -725,9 +945,9 @@ ${[159,341,525].map(v=>`<path d="M${v} 120 h34" stroke="#a9b9be" stroke-width="3
     case 'open-glossary':openGlossary();break;case 'close-glossary':closeGlossary();break;case 'print':showPrint();break;
     case 'ability':state.ability=Number(val);patch(1);break;
     case 'reading':state.reading=Number(val);state.readingMode='roles';patch(2);break;case 'reading-mode':state.readingMode=val==='guardrails'?'guardrails':'roles';patch(2);break;case 'reading-play':toggleReading();break;
-    case 'reuse':state.reuse=val;patch(3);break;case 'gate':state.gate=Number(val);patch(4);break;case 'risk':state.risk=val==='on';patch(4);break;
+    case 'reuse':state.reuse=val;state.reuseStep=0;patch(3);break;case 'reuse-step':state.reuseStep=Math.min(2,Math.max(0,Number(val)));patch(3);break;case 'gate':state.gate=Number(val);patch(4);break;case 'risk':state.risk=val==='on';patch(4);break;
     case 'battery':state.battery=Number(val);patch(5);break;case 'battery-prev':state.battery=Math.max(0,state.battery-1);patch(5);break;case 'battery-next':state.battery=Math.min(3,state.battery+1);patch(5);break;
-    case 'criterion':state.criterion=Number(val);patch(6);break;case 'field':state.field=Number(val);patch(7);break;case 'conclusion':state.conclusion=val;patch(9);break;
+    case 'criterion':state.criterion=Number(val);patch(6);break;case 'knowledge-case':state.knowledgeCase=['biomedical','fpga','leo'].includes(val)?val:'biomedical';patch(6);break;case 'field':state.field=Number(val);patch(7);break;case 'conclusion':state.conclusion=val;patch(9);break;
     case 'start-timer':startTimer(Number(val));break;case 'pause-timer':pauseTimer();break;case 'reset-timer':stopTimer();state.seconds=0;patch(10);break;case 'copy-answer':await copyAnswer();break;
   }});
   document.addEventListener('input',e=>{if(e.target.id==='glossary-search')drawGlossary();if(e.target.dataset.discussion){state.discussion[e.target.dataset.discussion]=e.target.value;updateDiscussionPreview();}if(e.target.id==='balance-range'){state.balance=Number(e.target.value);document.querySelectorAll('#balance-left').forEach(n=>n.style.width=(100-state.balance)+'%');document.querySelectorAll('#balance-right').forEach(n=>n.style.width=state.balance+'%');const msg=state.balance<30?'過度偏向點子，可能低估量產與驗證風險。':state.balance>70?'過度偏向檢核，可能讓探索性創意難以啟動。':'設計想像與驗證工程互相補位，使創意真正可被採用。';document.querySelectorAll('#balance-desc p').forEach(n=>n.textContent=msg);}});
