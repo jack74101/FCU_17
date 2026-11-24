@@ -848,6 +848,71 @@ body{font-weight:500}
 @media print{
  #print-root .page[data-index="4"] .gate-current-label{font-size:12px!important;padding:3px 8px!important}
 }
+
+/* CH 09: interactive research-industry comparison (original brand colors). */
+.ch09-grid{grid-template-columns:minmax(0,1.43fr) minmax(370px,.94fr)}
+.ch09-left{gap:10px}
+.ch09-diagram{width:100%;height:auto;max-height:min(45vh,435px);flex:1 1 0;min-height:0}
+.ch09-module{cursor:pointer;outline:none}
+.ch09-module rect{transition:stroke .2s ease,stroke-width .2s ease,filter .2s ease}
+.ch09-module:is(:hover,:focus-visible,.selected) rect{stroke:var(--primary);stroke-width:4;filter:drop-shadow(0 2px 3px #7d212a2a)}
+.ch09-module[data-value="quality"]:is(:hover,:focus-visible,.selected) rect{stroke:var(--secondary)}
+.ch09-module[data-value="integration"]:is(:hover,:focus-visible,.selected) rect{stroke:var(--accent-blue)}
+.ch09-left-prompt{border:1px solid var(--border-line);border-radius:9px;padding:9px 12px;background:var(--accent-blue-soft);font-size:clamp(13px,1vw,16px);line-height:1.35}
+.ch09-left-prompt strong{color:var(--accent-blue)}
+.ch09-left-prompt span{color:var(--text-muted);font-size:.85em}
+.ch09-right{gap:10px}
+.ch09-scenes{flex:0 0 auto}
+.ch09-scenes .mini-tab{font-size:clamp(12px,.94vw,15px);padding:8px 11px}
+.ch09-scenario{background:#f8fafb;border:1px solid var(--border-line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.ch09-scenario-header{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+.ch09-scenario-header strong{font-size:clamp(17px,1.15vw,21px)}
+.ch09-summary{font-size:clamp(15px,1vw,18px);line-height:1.42;font-weight:700;margin:0}
+.ch09-research-row{border-left:3px solid var(--accent-blue);padding:4px 9px}
+.ch09-research-row.ch09-human{border-color:var(--primary)}
+.ch09-research-row b{font-size:clamp(13px,.9vw,16px);color:var(--accent-blue)}
+.ch09-research-row.ch09-human b{color:var(--primary)}
+.ch09-research-row p{font-size:clamp(13px,.95vw,17px);line-height:1.43;margin:3px 0 0}
+.ch09-lawn{background:var(--secondary-soft);border:1px solid #b8d9d0;border-radius:10px;padding:12px 14px}
+.ch09-lawn strong{color:var(--secondary);font-size:clamp(14px,.95vw,17px)}
+.ch09-lawn p{font-size:clamp(13px,.9vw,16px);line-height:1.42;margin:5px 0 0}
+.ch09-balance{display:flex;flex-direction:column;gap:5px}
+.ch09-balance-head{display:flex;justify-content:space-between;align-items:center;gap:5px;font-size:12px}
+.ch09-balance-head strong:first-child{color:var(--primary)}.ch09-balance-head strong:last-child{color:var(--secondary)}
+.ch09-balance-head span{color:var(--text-muted);font-size:10px}
+.ch09-balance .range{height:6px}
+.ch09-balance-bars{display:flex;height:9px;gap:3px;border-radius:6px;overflow:hidden}
+.ch09-balance-desc p{margin:0;font-size:12px;line-height:1.3;color:var(--text-muted)}
+.ch09-disclaimer{font-size:11px;color:var(--text-muted);line-height:1.3}
+@media (min-width:901px) and (max-height:810px){
+ .presentation-main .page[data-index="8"]{gap:6px}
+ .presentation-main .page[data-index="8"] .ch09-grid{gap:9px}
+ .presentation-main .page[data-index="8"] .ch09-right{padding:10px 12px;gap:6px}
+ .presentation-main .page[data-index="8"] .ch09-left{padding:10px 12px;gap:6px}
+ .presentation-main .page[data-index="8"] .ch09-scenario{padding:9px 11px;gap:5px}
+ .presentation-main .page[data-index="8"] .ch09-scenario-header strong{font-size:16px}
+ .presentation-main .page[data-index="8"] .ch09-summary{font-size:14px;line-height:1.29}
+ .presentation-main .page[data-index="8"] .ch09-research-row{padding:2px 8px}
+ .presentation-main .page[data-index="8"] .ch09-research-row p{font-size:13px;line-height:1.29;margin-top:2px}
+ .presentation-main .page[data-index="8"] .ch09-lawn{padding:7px 10px}
+ .presentation-main .page[data-index="8"] .ch09-lawn p{font-size:13px;line-height:1.27;margin-top:2px}
+ .presentation-main .page[data-index="8"] .ch09-balance{gap:3px}
+ .presentation-main .page[data-index="8"] .ch09-disclaimer{font-size:10px}
+ .presentation-main .page[data-index="8"] .ch09-diagram{max-height:40vh}
+}
+@media (max-width:900px){
+ .ch09-grid{grid-template-columns:1fr}.ch09-diagram{max-height:380px;flex:auto}
+}
+@media print{
+ #print-root .page[data-index="8"] .ch09-grid{gap:12px!important}
+ #print-root .page[data-index="8"] .ch09-diagram{max-height:290px!important}
+ #print-root .page[data-index="8"] .ch09-right{gap:7px!important;padding:12px!important}
+ #print-root .page[data-index="8"] .ch09-scenario{padding:10px!important;gap:5px!important}
+ #print-root .page[data-index="8"] .ch09-research-row p{font-size:14px!important;line-height:1.34!important}
+ #print-root .page[data-index="8"] .ch09-lawn{padding:9px 10px!important}
+ #print-root .page[data-index="8"] .ch09-lawn p{font-size:13px!important}
+ #print-root .page[data-index="8"] .ch09-balance{gap:2px!important}
+}
 </style>
 </head>
 <body>
@@ -1060,7 +1125,7 @@ body{font-weight:500}
       skip:{title:'一人同溫層：只看符合預期的漂亮圖表',body:'過濾異常 Log 與失敗案例，形成自我驗證閉環，直到實測才全盤崩潰。'}
     }
   };
-  const state={page:0,layout:'single',presenting:false,ability:0,reading:2,readingMode:'roles',readingPlaying:false,reuse:'fpga',reuseStep:0,activeStep:'source',checkMode:'keep',battery:0,batteryEra:'current',criterion:0,knowledgeCase:'biomedical',field:0,balance:50,conclusion:'applied',conclusionFocus:'review',discussion:loadDiscussion(),seconds:0,endAt:0,timerRunning:false};
+  const state={page:0,layout:'single',presenting:false,ability:0,reading:2,readingMode:'roles',readingPlaying:false,reuse:'fpga',reuseStep:0,activeStep:'source',checkMode:'keep',battery:0,batteryEra:'current',criterion:0,knowledgeCase:'biomedical',field:0,ch09Scene:'academic',ch09Module:'design',balance:50,conclusion:'applied',conclusionFocus:'review',discussion:loadDiscussion(),seconds:0,endAt:0,timerRunning:false};
   const $=(id)=>document.getElementById(id);
   const esc=(s)=>String(s??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const label=(text,type='book')=>`<span class="tag ${type}">${text}</span>`;
@@ -1228,8 +1293,75 @@ body{font-weight:500}
   </div>`, '原書表 6；生醫／FPGA／LEO 範例為講者延伸，非實測。<a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence" target="_blank" rel="noopener noreferrer">NIST AI RMF</a>');}
 
   function s8(){const f=info.fields[state.field];return page(7,`<div class="main-grid"><div class="card visual-flex"><div class="card-title">為什麼「模擬成功」不等於「部署可靠」？</div><div class="image-panel" style="height:132px;flex:none"><img src="${ASSET.simreal}" alt="從實驗室、半導體、醫學儀器到真實場域的技術轉化概念配圖"/><span class="image-credit">AI 生成概念配圖・非研究證據</span></div><svg class="diagram" viewBox="0 0 720 218" role="img" aria-label="模擬條件與真實部署間有一個必須稽核的落差">${svgArrow('ar8','#a7bcc0')}<rect x="12" y="31" width="227" height="154" rx="14" fill="#edf3fa" stroke="#afcbe7" stroke-width="2"/><text x="125" y="78" font-weight="800" font-size="20" fill="#305f9b" text-anchor="middle">LAB / MODEL</text><text x="125" y="108" fill="#405b75" font-size="13" text-anchor="middle">受控制的條件</text><text x="125" y="132" fill="#64747f" font-size="12" text-anchor="middle">測試環境成立</text><rect x="480" y="31" width="228" height="154" rx="14" fill="#e8f4f0" stroke="#a1d3c5" stroke-width="2"/><text x="594" y="78" font-weight="800" font-size="20" fill="#18766c" text-anchor="middle">REAL WORLD</text><text x="594" y="108" fill="#2e7268" font-size="13" text-anchor="middle">條件會改變</text><text x="594" y="132" fill="#64747f" font-size="12" text-anchor="middle">結果需要重驗</text><path d="M239 109h241" class="flowline" stroke="#d66a3b" stroke-width="4" marker-end="url(#ar8)"/><circle cx="361" cy="108" r="59" fill="#fff6ed" stroke="#d66a3b" stroke-width="2.5" stroke-dasharray="5 7"/><text x="361" y="98" text-anchor="middle" font-size="18" font-weight="800" fill="#b75f32">GAP</text><text x="361" y="121" text-anchor="middle" font-size="11" fill="#b75f32">條件差距</text><text x="361" y="205" text-anchor="middle" fill="#64747f" font-size="12">補上分層測試、驗收標準與重驗證據</text></svg><div class="legend"><span><i class="dot blue"></i>模型成立</span><span><i class="dot red"></i>條件落差</span><span><i class="dot green"></i>真實驗證</span></div></div><div class="card column-stack"><div class="card-kicker">從自己的領域選一個案例</div><div class="field-cards">${info.fields.map((r,i)=>`<button type="button" class="field-card ${state.field===i?'selected':''}" data-action="field" data-value="${i}"><strong>${r.title}</strong><small>${['CGM','Ophthalmology','Hardware','LEO Network'][i]}</small></button>`).join('')}</div><div class="detail reveal"><strong>${f.title}</strong><p><b>實驗室：</b>${f.lab}</p><p><b>真實環境：</b>${f.real}</p></div><div class="inline-foot teal-foot"><strong>應如何驗收？</strong><br>${f.check}</div></div></div>`,'原書核心定義：「在明確臚列的條件下，維持可被重複檢證的因果關係或解決方案的性能」；四領域案例為講者延伸示意。');}
-  function s9(){const val=Number(state.balance);const copy=val<30?'過度偏向點子，可能低估量產與驗證風險。':val>70?'過度偏向檢核，可能讓探索性創意難以啟動。':'設計想像與驗證工程互相補位，使創意真正可被採用。';return page(8,`<div class="main-grid"><div class="card visual-flex"><div class="card-title">從發明到量產：兩種專業需要協作</div><svg class="diagram" viewBox="0 0 720 314" role="img" aria-label="創意發明與工程品質保證共同支撐可持續使用的成果">${svgArrow('ar9','#91aaaf')}<rect x="18" y="25" width="256" height="171" rx="14" fill="#f9eee9" stroke="#dec0b7"/><circle cx="145" cy="90" r="35" fill="none" stroke="#7d212a" stroke-width="3"/><path d="M132 111v13h26v-13M135 133h20" stroke="#7d212a" stroke-width="3" fill="none"/><path d="M145 51v-13M103 70l-10-8M185 70l10-8" stroke="#d66a3b" stroke-width="3"/><text x="145" y="159" text-anchor="middle" fill="#7d212a" font-size="19" font-weight="800">創意 / Design</text><text x="145" y="183" text-anchor="middle" fill="#64747f" font-size="12">打開新的可能性</text><rect x="446" y="25" width="256" height="171" rx="14" fill="#e8f4f0" stroke="#afdad1"/><path d="M574 52l48 17v35c0 32-23 47-48 57-25-10-48-25-48-57V69Z" fill="none" stroke="#18766c" stroke-width="4"/><path d="M552 100l18 18 29-35" stroke="#18766c" stroke-width="6" fill="none"/><text x="574" y="178" text-anchor="middle" fill="#18766c" font-size="19" font-weight="800">品質 / QA</text><path d="M275 112H440" stroke="#9ab5b9" stroke-width="3" class="flowline" marker-end="url(#ar9)"/><text x="360" y="88" text-anchor="middle" font-size="14" font-weight="800" fill="#305f9b">互補</text><rect x="191" y="226" width="338" height="65" rx="13" fill="#edf3fa" stroke="#c4d8eb"/><text x="360" y="256" text-anchor="middle" fill="#305f9b" font-size="18" font-weight="800">值得信任、能夠落地的成果</text><text x="360" y="278" text-anchor="middle" fill="#64747f" font-size="11">創新不是量產品質的替代品</text></svg><div class="legend"><span><i class="dot red"></i>MIT Media Lab：設計與發明</span><span><i class="dot green"></i>量產工程：一致性與可靠性</span></div></div><div class="card column-stack"><div class="card-kicker">互動概念演示 · 非研究數據</div><div style="display:flex;justify-content:space-between;font-weight:800;font-size:12px"><span style="color:var(--primary)">創意探索</span><span style="color:var(--secondary)">嚴謹驗證</span></div><input class="range" id="balance-range" type="range" min="0" max="100" step="5" value="${val}" aria-label="調整創意與嚴謹驗證的概念權重"/><div style="display:flex;gap:4px;height:23px;border-radius:8px;overflow:hidden"><div id="balance-left" style="width:${100-val}%;background:#7d212a;transition:width .2s"></div><div id="balance-right" style="width:${val}%;background:#18766c;transition:width .2s"></div></div><div id="balance-desc" class="detail" style="margin-top:8px"><strong>兩者相互補位</strong><p>${copy}</p></div><div class="inline-foot">原書以 MIT Media Lab 的設計思維與手機量產品質為例，說明創新與嚴謹並非零和。</div><div style="font-size:10.5px;color:var(--text-muted);margin-top:auto">滑桿只用來理解平衡關係，沒有代表任何公司或研究結果的真實比例。</div></div></div>`);}
-  function s10(){const app=state.conclusion==='applied';return page(9,`<div class="main-grid s10-grid"><div class="card visual-flex s10-diagram-card"><div class="card-title">如何從產學落差，轉向後發優勢？ <span class="tag caution">原書當時觀察</span></div><svg class="diagram s10-diagram" viewBox="0 0 730 312" role="img" aria-label="台灣的後發優勢，點選文獻回顧、模組整合與驗證探索實作重點">${svgArrow('ar10','#95aeb4')}
+    const CH09_CASES={
+    design:{
+      title:'創意發明 · Design',subtitle:'從未知問題產生可被挑戰的新解法',
+      academic:{summary:'寫論文：定位研究缺口，形成可反駁的研究假設。',steps:'① Agent 比對最近文獻與競爭方法 → ② 產生候選假設及差異矩陣 → ③ 研究者決定真正值得研究的問題。',human:'核對原文、最接近的 baseline 與新穎性；不能把模型組合直接宣稱原創。',lawn:'LAWN：提出具任務感知的排程策略，先查是否已有相同效用函數與相近基準。'},
+      industry:{summary:'現場問題：優先找到可部署的最小可行方案（MVP）。',steps:'① Agent 整理需求與失敗情境 → ② 比較可用模組和替代方案 → ③ 產出可回滾的 PoC 與驗收計畫。',human:'決定現場需求、成本、安全與資源優先順序；拒絕只有演示效果而無法維護的創意。',lawn:'LAWN：先在可控模擬場景驗證無人機任務排程的功能，不把 PoC 當成實際空口效能。'}
+    },
+    quality:{
+      title:'品質驗證 · QA',subtitle:'讓結論在清楚的邊界條件下成立',
+      academic:{summary:'寫論文：用重複實驗與反例證明結果的可信度。',steps:'① Agent 建立測試矩陣與分析腳本 → ② 執行 baseline／負載／種子比較 → ③ 整理效果量、不確定性及失敗案例。',human:'審核假設、公平基準與原始 Log；未實際執行的分析不得寫成結果。',lawn:'LAWN：比較 AoI、PDR 與延遲分布，記錄移動模型、負載、種子及交遞假設。'},
+      industry:{summary:'現場問題：確保性能、可靠度與故障復原可重現。',steps:'① Agent 生成迴歸與壓力測試 → ② 監測關鍵效能和異常 → ③ 彙整失效條件、修復步驟及回滾程序。',human:'界定 SLA、部署安全門檻與停機條件，必要時採實際設備量測。',lawn:'5G 核心網：可用 Open5GS 搭配適當測試環境查 PDU session 與服務路徑，但虛擬 UE 通過不等於 RF 性能通過。'}
+    },
+    integration:{
+      title:'協作落地 · Integration',subtitle:'把有價值的創意接到可驗收的系統',
+      academic:{summary:'寫論文：建立從研究問題到結論的完整證據鏈。',steps:'① Agent 整理架構、程式及版本 → ② 建立實驗與分析追溯表 → ③ 對照主張、圖表、限制與重現資料。',human:'對最終結論、作者責任、資料授權與投稿揭露負責。',lawn:'LAWN：把移動模型、排程、AoI 分析與 baseline 串成可重跑流程；模擬結論須說明適用邊界。'},
+      industry:{summary:'現場問題：整合成熟工具、持續觀察並迭代。',steps:'① Agent 建議介面與配置 → ② 建置整合測試及部署腳本 → ③ 監測異常、版本與回滾，分階段驗收。',human:'把關資安、權限、版本相容性和部署決策，不讓 Agent 未經授權變更生產系統。',lawn:'5G 核心網：整合 Open5GS／測試 UE／觀測日誌建立受控驗收，不能只憑單次連線成功宣稱符合 SLA。'}
+    }
+  };
+function s9(){
+    const val=Number(state.balance),mod=CH09_CASES[state.ch09Module]||CH09_CASES.design;
+    const scene=state.ch09Scene==='industry'?'industry':'academic';
+    const entry=mod[scene];
+    const copy=val<30?'過度偏向點子，可能低估量產與驗證風險。':val>70?'過度偏向檢核，可能讓探索性創意難以啟動。':'設計想像與驗證工程互相補位，使創意真正可被採用。';
+    return page(8,`<div class="main-grid ch09-grid">
+      <div class="card visual-flex ch09-left">
+        <div class="card-title">從發明到量產：選擇一項研究能力</div>
+        <svg class="diagram ch09-diagram" viewBox="0 0 720 310" role="img" aria-label="點選創意發明、品質驗證或協作落地查看人與 AI 的分工">
+          ${svgArrow('ar9','#91aaaf')}
+          <g class="svg-click ch09-module ${state.ch09Module==='design'?'selected':''}" data-action="ch09-module" data-value="design" role="button" tabindex="0" aria-label="創意發明 Design">
+            <rect x="18" y="17" width="256" height="177" rx="14" fill="#f9eee9" stroke="#dec0b7"/>
+            <circle cx="145" cy="84" r="35" fill="none" stroke="#7d212a" stroke-width="3"/><path d="M132 105v13h26v-13M135 127h20" stroke="#7d212a" stroke-width="3" fill="none"/><path d="M145 45v-13M103 64l-10-8M185 64l10-8" stroke="#d66a3b" stroke-width="3"/>
+            <text x="145" y="156" text-anchor="middle" fill="#7d212a" font-size="19" font-weight="800">創意發明 / Design</text><text x="145" y="182" text-anchor="middle" fill="#64747f" font-size="12">提出值得驗證的新解法</text>
+          </g>
+          <g class="svg-click ch09-module ${state.ch09Module==='quality'?'selected':''}" data-action="ch09-module" data-value="quality" role="button" tabindex="0" aria-label="品質驗證 QA">
+            <rect x="446" y="17" width="256" height="177" rx="14" fill="#e8f4f0" stroke="#afdad1"/>
+            <path d="M574 46l48 17v35c0 32-23 47-48 57-25-10-48-25-48-57V63Z" fill="none" stroke="#18766c" stroke-width="4"/><path d="M552 94l18 18 29-35" stroke="#18766c" stroke-width="6" fill="none"/>
+            <text x="574" y="173" text-anchor="middle" fill="#18766c" font-size="19" font-weight="800">品質驗證 / QA</text><text x="574" y="189" text-anchor="middle" fill="#64747f" font-size="12">效能、可靠度與重現性</text>
+          </g>
+          <path d="M275 105H440" stroke="#9ab5b9" stroke-width="3" class="flowline" marker-end="url(#ar9)"/><text x="360" y="82" text-anchor="middle" fill="#305f9b" font-size="14" font-weight="800">互補</text>
+          <g class="svg-click ch09-module ${state.ch09Module==='integration'?'selected':''}" data-action="ch09-module" data-value="integration" role="button" tabindex="0" aria-label="協作落地 Integration">
+            <rect x="190" y="225" width="340" height="65" rx="13" fill="#edf3fa" stroke="#c4d8eb"/>
+            <text x="360" y="253" text-anchor="middle" fill="#305f9b" font-size="19" font-weight="800">協作落地 / Integration</text>
+            <text x="360" y="275" text-anchor="middle" fill="#64747f" font-size="12">從論證到系統：可重現、能驗收</text>
+          </g>
+        </svg>
+        <div class="ch09-left-prompt">點選模組：<strong>${esc(mod.title)}</strong>　<span>原書對照＋2026 AI Agent 延伸</span></div>
+        <div class="legend"><span><i class="dot red"></i>MIT Media Lab：設計與發明</span><span><i class="dot green"></i>量產工程：一致性與可靠性</span></div>
+      </div>
+      <div class="card column-stack ch09-right">
+        <div class="action-row ch09-scenes" role="group" aria-label="研究與產業場景切換">
+          <button class="mini-tab ${scene==='academic'?'selected':''}" type="button" data-action="ch09-scene" data-value="academic" aria-pressed="${scene==='academic'}">學術研究場景</button>
+          <button class="mini-tab green ${scene==='industry'?'selected':''}" type="button" data-action="ch09-scene" data-value="industry" aria-pressed="${scene==='industry'}">產業實戰 / AI 協作場景</button>
+        </div>
+        <div class="ch09-scenario" aria-live="polite">
+          <div class="ch09-scenario-header"><span class="tag extend">2026 講者延伸 · 教學示例</span><strong>${esc(mod.title)}</strong></div>
+          <p class="ch09-summary">${esc(entry.summary)}</p>
+          <div class="ch09-research-row"><b>AI Agent 執行步驟</b><p>${esc(entry.steps)}</p></div>
+          <div class="ch09-research-row ch09-human"><b>人類把關重點</b><p>${esc(entry.human)}</p></div>
+        </div>
+        <div class="ch09-lawn"><strong>5G 通訊研究落地對照</strong><p>${esc(entry.lawn)}</p></div>
+        <div class="ch09-balance"><div class="ch09-balance-head"><strong>創意探索</strong><span>← 可調整概念平衡 →</span><strong>嚴謹驗證</strong></div>
+          <input class="range" id="balance-range" type="range" min="0" max="100" step="5" value="${val}" aria-label="調整創意與嚴謹驗證的概念權重"/>
+          <div class="ch09-balance-bars"><div id="balance-left" style="width:${100-val}%;background:var(--primary);transition:width .2s"></div><div id="balance-right" style="width:${val}%;background:var(--secondary);transition:width .2s"></div></div>
+          <div id="balance-desc" class="ch09-balance-desc"><p>${copy}</p></div>
+        </div>
+        <div class="ch09-disclaimer">本頁 AI Agent 與 5G 案例為示意，非已完成實測；量測、模擬與實機證據需分開判讀。</div>
+      </div>
+    </div>`,'原書以 MIT Media Lab 設計思維與手機量產品質對照創新／嚴謹；2026 AI Agent 與 LAWN／核心網示例為講者延伸。');
+  }
+    function s10(){const app=state.conclusion==='applied';return page(9,`<div class="main-grid s10-grid"><div class="card visual-flex s10-diagram-card"><div class="card-title">如何從產學落差，轉向後發優勢？ <span class="tag caution">原書當時觀察</span></div><svg class="diagram s10-diagram" viewBox="0 0 730 312" role="img" aria-label="台灣的後發優勢，點選文獻回顧、模組整合與驗證探索實作重點">${svgArrow('ar10','#95aeb4')}
 <g class="s10-academic ${app?'':'s10-original-active'}"><rect x="12" y="12" width="318" height="104" rx="14" fill="#edf3fa" stroke="#c4d9ea"/><text x="35" y="44" font-size="17" font-weight="800" fill="#305f9b">學術界慣用模式</text><text x="35" y="75" font-size="15" fill="#49677e">高成本・高風險・長研發期</text><text x="35" y="101" font-size="11" fill="#64747f">原書對歐美原創研究路線的對照</text></g>
 <g class="s10-industry ${app?'s10-applied-active':''}"><rect x="398" y="12" width="318" height="104" rx="14" fill="#f9eee9" stroke="#e2c8c1"/><text x="423" y="44" font-size="17" font-weight="800" fill="#7d212a">台灣產業現實需求</text><text x="423" y="75" font-size="15" fill="#80544c">低成本・短週期・快速應用</text><text x="423" y="101" font-size="11" fill="#64747f">原書當時的產業描述</text></g>
 <path d="M173 116v48h179 M556 116v48H378" fill="none" stroke="#94b3b5" stroke-width="3" stroke-dasharray="8 7" class="s10-connector ${app?'s10-moving-flow':''}" marker-end="url(#ar10)"/>
@@ -1286,7 +1418,7 @@ body{font-weight:500}
     case 'reading':state.reading=Number(val);state.readingMode='roles';patch(2);break;case 'reading-mode':state.readingMode=val==='guardrails'?'guardrails':'roles';patch(2);break;case 'reading-play':toggleReading();break;
     case 'reuse':state.reuse=val;state.reuseStep=0;patch(3);break;case 'reuse-step':state.reuseStep=Math.min(2,Math.max(0,Number(val)));patch(3);break;case 'gate':{const n=Number(val);if(Number.isInteger(n)&&n>=0&&n<GATE_STEP_IDS.length){state.activeStep=GATE_STEP_IDS[n];patch(4);}break;}case 'risk':state.checkMode=val==='on'?'skip':'keep';patch(4);break;
     case 'battery-era':state.batteryEra=val==='current'?'current':'book';patch(5);break;case 'battery':state.battery=Number(val);patch(5);break;case 'battery-prev':state.battery=Math.max(0,state.battery-1);patch(5);break;case 'battery-next':state.battery=Math.min(3,state.battery+1);patch(5);break;
-    case 'criterion':state.criterion=Number(val);patch(6);break;case 'knowledge-case':state.knowledgeCase=['biomedical','fpga','leo'].includes(val)?val:'biomedical';patch(6);break;case 'field':state.field=Number(val);patch(7);break;case 'conclusion':state.conclusion=val;patch(9);break;case 's10-focus':if(['review','integrate','validate'].includes(val)){state.conclusionFocus=val;refreshS10Focus();}break;
+    case 'criterion':state.criterion=Number(val);patch(6);break;case 'knowledge-case':state.knowledgeCase=['biomedical','fpga','leo'].includes(val)?val:'biomedical';patch(6);break;case 'field':state.field=Number(val);patch(7);break;case 'ch09-module':if(Object.prototype.hasOwnProperty.call(CH09_CASES,val)){state.ch09Module=val;patch(8);}break;case 'ch09-scene':if(['academic','industry'].includes(val)){state.ch09Scene=val;patch(8);}break;case 'conclusion':state.conclusion=val;patch(9);break;case 's10-focus':if(['review','integrate','validate'].includes(val)){state.conclusionFocus=val;refreshS10Focus();}break;
     case 'start-timer':startTimer(Number(val));break;case 'pause-timer':pauseTimer();break;case 'reset-timer':stopTimer();state.seconds=0;patch(10);break;case 'fill-5g-demo':applyDiscussion(DISCUSSION_DEMO);toast('已帶入 5G 研究示範。');break;case 'clear-discussion':applyDiscussion({delegate:'',hold:'',proof:''});toast('已清空，請填入自己的研究題目。');break;case 'copy-answer':await copyAnswer();break;
   }});
   document.addEventListener('input',e=>{if(e.target.id==='glossary-search')drawGlossary();if(e.target.dataset.discussion){state.discussion[e.target.dataset.discussion]=e.target.value;updateDiscussionPreview();saveDiscussion();}if(e.target.id==='balance-range'){state.balance=Number(e.target.value);document.querySelectorAll('#balance-left').forEach(n=>n.style.width=(100-state.balance)+'%');document.querySelectorAll('#balance-right').forEach(n=>n.style.width=state.balance+'%');const msg=state.balance<30?'過度偏向點子，可能低估量產與驗證風險。':state.balance>70?'過度偏向檢核，可能讓探索性創意難以啟動。':'設計想像與驗證工程互相補位，使創意真正可被採用。';document.querySelectorAll('#balance-desc p').forEach(n=>n.textContent=msg);}});
